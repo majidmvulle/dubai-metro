@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="Geovative Solutions GeoTours" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+<metadata>
+  <name>Dubai</name>
+  <desc>Prosetka niz Dubai</desc>
+  <author>
+    <name>tenevski, using GeoTours</name>
+    <link href="http://www.geovative.com/view?t=IDL">
+      <text>Dubai</text>
+    </link>
+  </author>
+  <link href="http://www.geovative.com/view?t=IDL">
+    <text>Dubai</text>
+  </link>
+  <time>2007-04-18T17:52:36</time>
+  <keywords>Dubai tour</keywords>
+</metadata>
+
+
+<wpt lat="48.458352" lon="18.28125">
+<name>Radovis</name>
+<desc>Slika od Magdalena</desc>
+<link href="Data/Location508-1"/>
+<sym>Waypoint</sym>
+<extensions>
+        <gpxx:WaypointExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd">
+            <gpxx:Proximity>152.4</gpxx:Proximity>
+            <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+        </gpxx:WaypointExtension>
+</extensions>
+</wpt>
+</gpx>

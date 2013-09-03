@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C3023B817CBF32E007BA845 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3023B717CBF32E007BA845 /* UIKit.framework */; };
+		1C3023BA17CBF32E007BA845 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3023B917CBF32E007BA845 /* Foundation.framework */; };
+		1C3023BC17CBF32E007BA845 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3023BB17CBF32E007BA845 /* CoreGraphics.framework */; };
+		1C3023C217CBF32E007BA845 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C3023C017CBF32E007BA845 /* InfoPlist.strings */; };
+		1C3023C417CBF32E007BA845 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3023C317CBF32E007BA845 /* main.m */; };
+		1C3023C817CBF32E007BA845 /* DubaiMetroAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3023C717CBF32E007BA845 /* DubaiMetroAppDelegate.m */; };
+		1C3023CA17CBF32E007BA845 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3023C917CBF32E007BA845 /* Default.png */; };
+		1C3023CC17CBF32E007BA845 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3023CB17CBF32E007BA845 /* Default@2x.png */; };
+		1C3023CE17CBF32E007BA845 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3023CD17CBF32E007BA845 /* Default-568h@2x.png */; };
+		1C3023D117CBF32E007BA845 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3023CF17CBF32E007BA845 /* iPhone.storyboard */; };
+		1C3023D417CBF32E007BA845 /* DubaiMetroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3023D317CBF32E007BA845 /* DubaiMetroViewController.m */; };
+		1C355A7817CE2E6100DBF6F3 /* Dubai.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1C355A7717CE2E6100DBF6F3 /* Dubai.gpx */; };
+		1C355A7A17CE2F5F00DBF6F3 /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1C355A7917CE2F5F00DBF6F3 /* default.gpx */; };
+		1C539DEA17D523F50074B63E /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539DE917D523F50074B63E /* GoogleMaps.framework */; };
+		1C539DEC17D524780074B63E /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1C539DEB17D524780074B63E /* GoogleMaps.bundle */; };
+		1C539DEE17D524950074B63E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539DED17D524950074B63E /* AVFoundation.framework */; };
+		1C539DF017D5249C0074B63E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539DEF17D5249C0074B63E /* CoreData.framework */; };
+		1C539DF217D524A40074B63E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539DF117D524A40074B63E /* CoreText.framework */; };
+		1C539DF417D524AB0074B63E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539DF317D524AB0074B63E /* CoreLocation.framework */; };
+		1C539DF617D524B70074B63E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539DF517D524B70074B63E /* GLKit.framework */; };
+		1C539DF817D524BF0074B63E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539DF717D524BE0074B63E /* ImageIO.framework */; };
+		1C539DFA17D524CC0074B63E /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539DF917D524CC0074B63E /* libc++.dylib */; };
+		1C539DFC17D524D70074B63E /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539DFB17D524D70074B63E /* libicucore.dylib */; };
+		1C539DFE17D524E60074B63E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539DFD17D524E60074B63E /* libz.dylib */; };
+		1C539E0017D524F10074B63E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539DFF17D524F10074B63E /* OpenGLES.framework */; };
+		1C539E0217D524F80074B63E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539E0117D524F80074B63E /* QuartzCore.framework */; };
+		1C539E0417D525010074B63E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C539E0317D525010074B63E /* SystemConfiguration.framework */; };
+		1C539E0917D527320074B63E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C539E0817D527320074B63E /* MapViewController.m */; };
+		1C539E1517D539910074B63E /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C539E1417D539910074B63E /* NavigationController.m */; };
+		1C539E1E17D5447B0074B63E /* menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C539E1D17D5447B0074B63E /* menu-icon.png */; };
+		1C539E2717D545820074B63E /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C539E2217D545820074B63E /* IISideController.m */; };
+		1C539E2817D545820074B63E /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C539E2417D545820074B63E /* IIViewDeckController.m */; };
+		1C539E2917D545820074B63E /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C539E2617D545820074B63E /* IIWrapController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C3023B417CBF32E007BA845 /* DubaiMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubaiMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C3023B717CBF32E007BA845 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1C3023B917CBF32E007BA845 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1C3023BB17CBF32E007BA845 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1C3023BF17CBF32E007BA845 /* DubaiMetro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DubaiMetro-Info.plist"; sourceTree = "<group>"; };
+		1C3023C117CBF32E007BA845 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1C3023C317CBF32E007BA845 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1C3023C517CBF32E007BA845 /* DubaiMetro-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DubaiMetro-Prefix.pch"; sourceTree = "<group>"; };
+		1C3023C617CBF32E007BA845 /* DubaiMetroAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DubaiMetroAppDelegate.h; sourceTree = "<group>"; };
+		1C3023C717CBF32E007BA845 /* DubaiMetroAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DubaiMetroAppDelegate.m; sourceTree = "<group>"; };
+		1C3023C917CBF32E007BA845 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1C3023CB17CBF32E007BA845 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		1C3023CD17CBF32E007BA845 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1C3023D017CBF32E007BA845 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
+		1C3023D217CBF32E007BA845 /* DubaiMetroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DubaiMetroViewController.h; sourceTree = "<group>"; };
+		1C3023D317CBF32E007BA845 /* DubaiMetroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DubaiMetroViewController.m; sourceTree = "<group>"; };
+		1C355A7717CE2E6100DBF6F3 /* Dubai.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Dubai.gpx; sourceTree = "<group>"; };
+		1C355A7917CE2F5F00DBF6F3 /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.gpx; sourceTree = "<group>"; };
+		1C539DE917D523F50074B63E /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		1C539DEB17D524780074B63E /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		1C539DED17D524950074B63E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1C539DEF17D5249C0074B63E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1C539DF117D524A40074B63E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		1C539DF317D524AB0074B63E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1C539DF517D524B70074B63E /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		1C539DF717D524BE0074B63E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		1C539DF917D524CC0074B63E /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		1C539DFB17D524D70074B63E /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		1C539DFD17D524E60074B63E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1C539DFF17D524F10074B63E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		1C539E0117D524F80074B63E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1C539E0317D525010074B63E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1C539E0617D526060074B63E /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = constants.h; path = ../constants.h; sourceTree = "<group>"; };
+		1C539E0717D527320074B63E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		1C539E0817D527320074B63E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		1C539E1317D539910074B63E /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		1C539E1417D539910074B63E /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		1C539E1D17D5447B0074B63E /* menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-icon.png"; sourceTree = "<group>"; };
+		1C539E2117D545820074B63E /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
+		1C539E2217D545820074B63E /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
+		1C539E2317D545820074B63E /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
+		1C539E2417D545820074B63E /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
+		1C539E2517D545820074B63E /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
+		1C539E2617D545820074B63E /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C3023B117CBF32E007BA845 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C539E0417D525010074B63E /* SystemConfiguration.framework in Frameworks */,
+				1C539E0217D524F80074B63E /* QuartzCore.framework in Frameworks */,
+				1C539E0017D524F10074B63E /* OpenGLES.framework in Frameworks */,
+				1C539DFE17D524E60074B63E /* libz.dylib in Frameworks */,
+				1C539DFC17D524D70074B63E /* libicucore.dylib in Frameworks */,
+				1C539DFA17D524CC0074B63E /* libc++.dylib in Frameworks */,
+				1C539DF817D524BF0074B63E /* ImageIO.framework in Frameworks */,
+				1C539DF617D524B70074B63E /* GLKit.framework in Frameworks */,
+				1C539DF417D524AB0074B63E /* CoreLocation.framework in Frameworks */,
+				1C539DF217D524A40074B63E /* CoreText.framework in Frameworks */,
+				1C539DF017D5249C0074B63E /* CoreData.framework in Frameworks */,
+				1C539DEE17D524950074B63E /* AVFoundation.framework in Frameworks */,
+				1C3023B817CBF32E007BA845 /* UIKit.framework in Frameworks */,
+				1C3023BA17CBF32E007BA845 /* Foundation.framework in Frameworks */,
+				1C3023BC17CBF32E007BA845 /* CoreGraphics.framework in Frameworks */,
+				1C539DEA17D523F50074B63E /* GoogleMaps.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C3023AB17CBF32E007BA845 = {
+			isa = PBXGroup;
+			children = (
+				1C3023BD17CBF32E007BA845 /* DubaiMetro */,
+				1C539E0517D525AF0074B63E /* SimulatedLocations */,
+				1C3023B617CBF32E007BA845 /* Frameworks */,
+				1C3023B517CBF32E007BA845 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1C3023B517CBF32E007BA845 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C3023B417CBF32E007BA845 /* DubaiMetro.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C3023B617CBF32E007BA845 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C539E0317D525010074B63E /* SystemConfiguration.framework */,
+				1C539E0117D524F80074B63E /* QuartzCore.framework */,
+				1C539DFF17D524F10074B63E /* OpenGLES.framework */,
+				1C539DFD17D524E60074B63E /* libz.dylib */,
+				1C539DFB17D524D70074B63E /* libicucore.dylib */,
+				1C539DF917D524CC0074B63E /* libc++.dylib */,
+				1C539DF717D524BE0074B63E /* ImageIO.framework */,
+				1C539DF517D524B70074B63E /* GLKit.framework */,
+				1C539DF317D524AB0074B63E /* CoreLocation.framework */,
+				1C539DF117D524A40074B63E /* CoreText.framework */,
+				1C539DEF17D5249C0074B63E /* CoreData.framework */,
+				1C539DED17D524950074B63E /* AVFoundation.framework */,
+				1C539DEB17D524780074B63E /* GoogleMaps.bundle */,
+				1C539DE917D523F50074B63E /* GoogleMaps.framework */,
+				1C3023B717CBF32E007BA845 /* UIKit.framework */,
+				1C3023B917CBF32E007BA845 /* Foundation.framework */,
+				1C3023BB17CBF32E007BA845 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C3023BD17CBF32E007BA845 /* DubaiMetro */ = {
+			isa = PBXGroup;
+			children = (
+				1C539E0617D526060074B63E /* constants.h */,
+				1C3023CF17CBF32E007BA845 /* iPhone.storyboard */,
+				1C539E1317D539910074B63E /* NavigationController.h */,
+				1C539E1417D539910074B63E /* NavigationController.m */,
+				1C539E1F17D544800074B63E /* Resources */,
+				1C539E0F17D52CD70074B63E /* MapView */,
+				1C3023D217CBF32E007BA845 /* DubaiMetroViewController.h */,
+				1C3023D317CBF32E007BA845 /* DubaiMetroViewController.m */,
+				1C539E2017D545820074B63E /* ViewDeck */,
+				1C3023BE17CBF32E007BA845 /* Supporting Files */,
+			);
+			path = DubaiMetro;
+			sourceTree = "<group>";
+		};
+		1C3023BE17CBF32E007BA845 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C3023C617CBF32E007BA845 /* DubaiMetroAppDelegate.h */,
+				1C3023C717CBF32E007BA845 /* DubaiMetroAppDelegate.m */,
+				1C3023BF17CBF32E007BA845 /* DubaiMetro-Info.plist */,
+				1C3023C017CBF32E007BA845 /* InfoPlist.strings */,
+				1C3023C317CBF32E007BA845 /* main.m */,
+				1C3023C517CBF32E007BA845 /* DubaiMetro-Prefix.pch */,
+				1C3023C917CBF32E007BA845 /* Default.png */,
+				1C3023CB17CBF32E007BA845 /* Default@2x.png */,
+				1C3023CD17CBF32E007BA845 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1C539E0517D525AF0074B63E /* SimulatedLocations */ = {
+			isa = PBXGroup;
+			children = (
+				1C355A7917CE2F5F00DBF6F3 /* default.gpx */,
+				1C355A7717CE2E6100DBF6F3 /* Dubai.gpx */,
+			);
+			name = SimulatedLocations;
+			sourceTree = "<group>";
+		};
+		1C539E0F17D52CD70074B63E /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				1C539E0717D527320074B63E /* MapViewController.h */,
+				1C539E0817D527320074B63E /* MapViewController.m */,
+			);
+			name = MapView;
+			sourceTree = "<group>";
+		};
+		1C539E1F17D544800074B63E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1C539E1D17D5447B0074B63E /* menu-icon.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1C539E2017D545820074B63E /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				1C539E2117D545820074B63E /* IISideController.h */,
+				1C539E2217D545820074B63E /* IISideController.m */,
+				1C539E2317D545820074B63E /* IIViewDeckController.h */,
+				1C539E2417D545820074B63E /* IIViewDeckController.m */,
+				1C539E2517D545820074B63E /* IIWrapController.h */,
+				1C539E2617D545820074B63E /* IIWrapController.m */,
+			);
+			path = ViewDeck;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1C3023B317CBF32E007BA845 /* DubaiMetro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C3023D717CBF32E007BA845 /* Build configuration list for PBXNativeTarget "DubaiMetro" */;
+			buildPhases = (
+				1C3023B017CBF32E007BA845 /* Sources */,
+				1C3023B117CBF32E007BA845 /* Frameworks */,
+				1C3023B217CBF32E007BA845 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DubaiMetro;
+			productName = DubaiMetro;
+			productReference = 1C3023B417CBF32E007BA845 /* DubaiMetro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1C3023AC17CBF32E007BA845 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DubaiMetro;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Majid Mvulle";
+			};
+			buildConfigurationList = 1C3023AF17CBF32E007BA845 /* Build configuration list for PBXProject "DubaiMetro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1C3023AB17CBF32E007BA845;
+			productRefGroup = 1C3023B517CBF32E007BA845 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C3023B317CBF32E007BA845 /* DubaiMetro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1C3023B217CBF32E007BA845 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C3023C217CBF32E007BA845 /* InfoPlist.strings in Resources */,
+				1C3023CA17CBF32E007BA845 /* Default.png in Resources */,
+				1C3023CC17CBF32E007BA845 /* Default@2x.png in Resources */,
+				1C3023CE17CBF32E007BA845 /* Default-568h@2x.png in Resources */,
+				1C3023D117CBF32E007BA845 /* iPhone.storyboard in Resources */,
+				1C355A7817CE2E6100DBF6F3 /* Dubai.gpx in Resources */,
+				1C355A7A17CE2F5F00DBF6F3 /* default.gpx in Resources */,
+				1C539DEC17D524780074B63E /* GoogleMaps.bundle in Resources */,
+				1C539E1E17D5447B0074B63E /* menu-icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C3023B017CBF32E007BA845 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C3023C417CBF32E007BA845 /* main.m in Sources */,
+				1C3023C817CBF32E007BA845 /* DubaiMetroAppDelegate.m in Sources */,
+				1C3023D417CBF32E007BA845 /* DubaiMetroViewController.m in Sources */,
+				1C539E0917D527320074B63E /* MapViewController.m in Sources */,
+				1C539E1517D539910074B63E /* NavigationController.m in Sources */,
+				1C539E2717D545820074B63E /* IISideController.m in Sources */,
+				1C539E2817D545820074B63E /* IIViewDeckController.m in Sources */,
+				1C539E2917D545820074B63E /* IIWrapController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1C3023C017CBF32E007BA845 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C3023C117CBF32E007BA845 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1C3023CF17CBF32E007BA845 /* iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C3023D017CBF32E007BA845 /* en */,
+			);
+			name = iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1C3023D517CBF32E007BA845 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1C3023D617CBF32E007BA845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C3023D817CBF32E007BA845 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DubaiMetro/DubaiMetro-Prefix.pch";
+				INFOPLIST_FILE = "DubaiMetro/DubaiMetro-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1C3023D917CBF32E007BA845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DubaiMetro/DubaiMetro-Prefix.pch";
+				INFOPLIST_FILE = "DubaiMetro/DubaiMetro-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C3023AF17CBF32E007BA845 /* Build configuration list for PBXProject "DubaiMetro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C3023D517CBF32E007BA845 /* Debug */,
+				1C3023D617CBF32E007BA845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C3023D717CBF32E007BA845 /* Build configuration list for PBXNativeTarget "DubaiMetro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C3023D817CBF32E007BA845 /* Debug */,
+				1C3023D917CBF32E007BA845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1C3023AC17CBF32E007BA845 /* Project object */;
+}

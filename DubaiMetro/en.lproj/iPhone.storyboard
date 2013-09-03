@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3rw-EW-hLe">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Dubai Metro View Controller - DubaiMetro-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="DubaiMetroViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXq-5w-eFY">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.090196078431372548" green="0.11764705882352941" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZXq-5w-eFY" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="RnK-W8-dRk"/>
+                            <constraint firstItem="ZXq-5w-eFY" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Sdh-h1-HNd"/>
+                            <constraint firstItem="ZXq-5w-eFY" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="T7g-9M-qLB"/>
+                            <constraint firstItem="ZXq-5w-eFY" firstAttribute="top" secondItem="3" secondAttribute="top" constant="228" id="Y06-I8-bG4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="DubaiMetro" id="PHT-gy-xaz"/>
+                    <connections>
+                        <outlet property="customMapView" destination="ZXq-5w-eFY" id="d7n-tl-Ac2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="-180"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GCZ-W2-Mcb">
+            <objects>
+                <navigationController id="3rw-EW-hLe" customClass="NavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oek-Id-8C8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="3DO-Wd-vcR">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="xWS-1C-Od7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EyQ-zQ-fMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="498" y="-180"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
