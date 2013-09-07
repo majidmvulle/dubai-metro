@@ -1,0 +1,1352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>stations</key>
+	<array>
+		<dict>
+			<key>stationId</key>
+			<string>RSH1</string>
+			<key>stationName</key>
+			<string>Rashidiya</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.230068</real>
+			<key>stationLongitude</key>
+			<real>55.39161</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Park and Ride, 3000 spaces</string>
+			<key>stationAttractions</key>
+			<string>DEWA, Rashidiya Shopping Centre, Rashidiya Bus Centre</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 3</string>
+				<string>Special 3 Tracks</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>EMI2</string>
+			<key>stationName</key>
+			<string>Emirates</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.241156</real>
+			<key>stationLongitude</key>
+			<real>55.365767</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Emirates Terminal</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 2</string>
+				<string>Elevated concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>AT32</string>
+			<key>stationName</key>
+			<string>Airport Terminal 3</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.24504</real>
+			<key>stationLongitude</key>
+			<real>55.359531</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Dubai International Airport, Emirates Post</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Special Station</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>AT11</string>
+			<key>stationName</key>
+			<string>Airport Terminal 1</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.248466</real>
+			<key>stationLongitude</key>
+			<real>55.352452</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Dubai International Airport</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Special Station</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>GGI2</string>
+			<key>stationName</key>
+			<string>GGICO</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.249529</real>
+			<key>stationLongitude</key>
+			<real>55.340015</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Dubai International Airport, Emirates Post</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 2</string>
+				<string>Elevated Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>DCC2</string>
+			<key>stationName</key>
+			<string>Deira City Center</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.254077</real>
+			<key>stationLongitude</key>
+			<real>55.330158</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Deira City Centre (for a fee)</string>
+			<key>stationAttractions</key>
+			<string>Deira City Centre, Dubai Creek Marina, Dubai Shopping Centre</string>
+			<key>stationType</key>
+			<array>
+				<string>Underground</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>RIG2</string>
+			<key>stationName</key>
+			<string>Al Rigga</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.262676</real>
+			<key>stationLongitude</key>
+			<real>55.325333</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Taj Palace, Concorde Hotel Marriot Apartments, Dhow Wharfage</string>
+			<key>stationType</key>
+			<array>
+				<string>Underground</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>UNI2</string>
+			<key>stationName</key>
+			<string>Union Square</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.266232</real>
+			<key>stationLongitude</key>
+			<real>55.313855</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Dubai Municipality, Radisson Creek Hotel, Etisalat</string>
+			<key>stationType</key>
+			<array>
+				<string>Underground Transfer</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>BUR2</string>
+			<key>stationName</key>
+			<string>Burjuman</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+				<string>6</string>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.254851</real>
+			<key>stationLongitude</key>
+			<real>55.304285</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Burjuman Centre, Bank Street, Department of Health</string>
+			<key>stationType</key>
+			<array>
+				<string>Underground Transfer</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>KAR2</string>
+			<key>stationName</key>
+			<string>Al Karama</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.244482</real>
+			<key>stationLongitude</key>
+			<real>55.298186</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Karama Centre, Al Attar Centre, Al Mankhool Player Ground</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 2</string>
+				<string>Elevated Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>JAF2</string>
+			<key>stationName</key>
+			<string>Al Jafiliya</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.233599</real>
+			<key>stationLongitude</key>
+			<real>55.292162</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>DNRD HQ, Bur Dubai Police Station, Etisalat</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 1</string>
+				<string>Grade Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>WTC2</string>
+			<key>stationName</key>
+			<string>Dubai World Trade Centre</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.224786</real>
+			<key>stationLongitude</key>
+			<real>55.284947</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Dubai International Financial Centre</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 1</string>
+				<string>Grade Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>EMT2</string>
+			<key>stationName</key>
+			<string>Emirates Towers</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.217201</real>
+			<key>stationLongitude</key>
+			<real>55.279722</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Emirates Towers</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 1</string>
+				<string>Grade Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>FIC2</string>
+			<key>stationName</key>
+			<string>Financial Centre</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.211115</real>
+			<key>stationLongitude</key>
+			<real>55.27557</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Financial Centre, Dubai Mall, Emirates Towers</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 2</string>
+				<string>Elevated Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>BJK2</string>
+			<key>stationName</key>
+			<string>Burj Khalifa/Dubai Mall</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.201374</real>
+			<key>stationLongitude</key>
+			<real>55.2694</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Dubai Mall</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 2</string>
+				<string>Elevated Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>BSB1</string>
+			<key>stationName</key>
+			<string>Business Bay</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>3</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.191263</real>
+			<key>stationLongitude</key>
+			<real>55.260351</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Business Bay</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 1</string>
+				<string>Grade Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>NIB2</string>
+			<key>stationName</key>
+			<string>Noor Islamic Bank</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>2</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.155671</real>
+			<key>stationLongitude</key>
+			<real>55.22839</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Times Square</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 1</string>
+				<string>Grade Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>FGB2</string>
+			<key>stationName</key>
+			<string>First Gulf Bank</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>2</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.126753</real>
+			<key>stationLongitude</key>
+			<real>55.207806</real>
+			<key>isStationOperational</key>
+			<false/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string> Burj Dubai Traffic Department</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 1</string>
+				<string>Grade Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>MOE2</string>
+			<key>stationName</key>
+			<string>Mall of the Emirates</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>2</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.126753</real>
+			<key>stationLongitude</key>
+			<real>55.207806</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Mall of the Emirates, Rashid Pediatric Clinic, Dubai Police Academy, Madinat Jumeirah</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 2</string>
+				<string>Elevated Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>SDG2</string>
+			<key>stationName</key>
+			<string>Sharaf DG</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>2</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.114785</real>
+			<key>stationLongitude</key>
+			<real>55.190822</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Golden Tulip Hotel</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 1</string>
+				<string>Grade Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>DIC2</string>
+			<key>stationName</key>
+			<string>Dubai Internet City</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>2</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.102107</real>
+			<key>stationLongitude</key>
+			<real>55.17363</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Knowledge Village, Dubai Internet City, Palm Jumeirah</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 2</string>
+				<string>Elevated Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>NAK2</string>
+			<key>stationName</key>
+			<string>Nakheel</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>2</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.088864</real>
+			<key>stationLongitude</key>
+			<real>55.158073</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Dubai Media City, American University of Dubai</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 3</string>
+				<string>Special 3 Tracks</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>DMA2</string>
+			<key>stationName</key>
+			<string>Dubai Marina</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>2</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.079958</real>
+			<key>stationLongitude</key>
+			<real>55.147521</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Dubai International Marine Club, Marina Front, Jumeirah Beach Residence</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 2</string>
+				<string>Elevated Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>JLT2</string>
+			<key>stationName</key>
+			<string>Jumeirah Lake Towers</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>2</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.070877</real>
+			<key>stationLongitude</key>
+			<real>55.138648</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Dubai Marina Mall</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 2</string>
+				<string>Elevated Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>NHT2</string>
+			<key>stationName</key>
+			<string>Nakheel Harbour and Towers</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>2</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.057927</real>
+			<key>stationLongitude</key>
+			<real>55.127174</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Park and Ride, 3000 spaces</string>
+			<key>stationAttractions</key>
+			<string>Jumeirah Islands, Dubai Marina</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 2</string>
+				<string>Elevated Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>IBB2</string>
+			<key>stationName</key>
+			<string>Ibn Battuta</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>2</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.04673</real>
+			<key>stationLongitude</key>
+			<real>55.117512</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Ibn Battuta Mall</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 1</string>
+				<string>Grade Station</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>EN2</string>
+			<key>stationName</key>
+			<string>Energy</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>1</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.026351</real>
+			<key>stationLongitude</key>
+			<real>55.101253</real>
+			<key>isStationOperational</key>
+			<false/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Dubai Aluminium Company (DUBAL)</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 1</string>
+				<string>Grade Station</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>DAN2</string>
+			<key>stationName</key>
+			<string>Jebel Ali Industrial</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>1</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.001325</real>
+			<key>stationLongitude</key>
+			<real>55.095695</real>
+			<key>isStationOperational</key>
+			<false/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Industrial Zone, Jebel Ali Cricket Ground</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated Type 1</string>
+				<string>Grade Concourse</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>JBA2</string>
+			<key>stationName</key>
+			<string>Jebel Ali</string>
+			<key>stationLine</key>
+			<array>
+				<string>Red</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>1</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>24.977583</real>
+			<key>stationLongitude</key>
+			<real>55.091039</real>
+			<key>isStationOperational</key>
+			<false/>
+			<key>stationParking</key>
+			<string>Small car park</string>
+			<key>stationAttractions</key>
+			<string>Jebel Ali Free Zone</string>
+			<key>stationType</key>
+			<array>
+				<string>Grade Station</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>ETS2</string>
+			<key>stationName</key>
+			<string>Etisalat</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.254817</real>
+			<key>stationLongitude</key>
+			<real>55.401022</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string>Park and Ride, 2350 spaces</string>
+			<key>stationAttractions</key>
+			<string></string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>QUS1</string>
+			<key>stationName</key>
+			<string>Al Qusais 1</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.262536</real>
+			<key>stationLongitude</key>
+			<real>55.387461</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Ministry of Education, General Department of Dubai Civil Defence, Al Twar Centre</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>DAZ1</string>
+			<key>stationName</key>
+			<string>Dubai Airport Free Zone</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.269851</real>
+			<key>stationLongitude</key>
+			<real>55.374919</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Terminal 2 of Dubai Airport</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>NHD2</string>
+			<key>stationName</key>
+			<string>Al Nahda</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.273199</real>
+			<key>stationLongitude</key>
+			<real>55.369281</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Ministry of Public Works, Union Cooperative Society</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>STD2</string>
+			<key>stationName</key>
+			<string>Stadium</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.277846</real>
+			<key>stationLongitude</key>
+			<real>55.361465</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Al Ahli Club</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>QYD2</string>
+			<key>stationName</key>
+			<string>Al Qiyadah</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.27771</real>
+			<key>stationLongitude</key>
+			<real>55.352699</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Al Mulla Plaza, Dubai Police Headquarters</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>ABH2</string>
+			<key>stationName</key>
+			<string>Abu Hail</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.275304</real>
+			<key>stationLongitude</key>
+			<real>55.346299</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Public Schools, Commercial Centres</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>ABS2</string>
+			<key>stationName</key>
+			<string>Abu Baker Al Siddique</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.270822</real>
+			<key>stationLongitude</key>
+			<real>55.332931</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Hamrain Centre, Marriott Hotel</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>SDN2</string>
+			<key>stationName</key>
+			<string>Salah Al Din</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.270395</real>
+			<key>stationLongitude</key>
+			<real>55.320333</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Al Reef Mall, Al Maktoum Hospital</string>
+			<key>stationType</key>
+			<array>
+				<string>Undeground</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>BSQ2</string>
+			<key>stationName</key>
+			<string>Baniyas Square</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.269138</real>
+			<key>stationLongitude</key>
+			<real>55.307713</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Naif Souq</string>
+			<key>stationType</key>
+			<array>
+				<string>Underground</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>PMD2</string>
+			<key>stationName</key>
+			<string>Palm Deira</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.276133</real>
+			<key>stationLongitude</key>
+			<real>55.301665</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Hyatt Regency, Palm Deira</string>
+			<key>stationType</key>
+			<array>
+				<string>Underground</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>RAS2</string>
+			<key>stationName</key>
+			<string>Al Ras</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>7</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.268707</real>
+			<key>stationLongitude</key>
+			<real>55.293814</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Gold Souq, Spice Souq, Textile Souq</string>
+			<key>stationType</key>
+			<array>
+				<string>Underground</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>GUB2</string>
+			<key>stationName</key>
+			<string>Al Ghubaiba</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>6</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.264995</real>
+			<key>stationLongitude</key>
+			<real>55.288911</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Sheikh Saeed House, Heritage and Diving Village, Dubai Creek Abra</string>
+			<key>stationType</key>
+			<array>
+				<string>Underground</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>FAH2</string>
+			<key>stationName</key>
+			<string>Al Fahidi</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>6</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.258165</real>
+			<key>stationLongitude</key>
+			<real>55.297438</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>York International Hotel</string>
+			<key>stationType</key>
+			<array>
+				<string>Underground</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>ODM2</string>
+			<key>stationName</key>
+			<string>Oud Metha</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>6</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.243665</real>
+			<key>stationLongitude</key>
+			<real>55.315942</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Al Nasr Club, Rashid Hospital, Iranian Club</string>
+			<key>stationType</key>
+			<array>
+				<string>Underground</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>DHC2</string>
+			<key>stationName</key>
+			<string>Dubai Health Care City</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>6</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.230913</real>
+			<key>stationLongitude</key>
+			<real>55.322776</real>
+			<key>isStationOperational</key>
+			<true/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string>Dewa Headquarters, Wafi City Mall</string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>JDF1</string>
+			<key>stationName</key>
+			<string>Al Jadaf</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>6</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.225</real>
+			<key>stationLongitude</key>
+			<real>55.333551</real>
+			<key>isStationOperational</key>
+			<false/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string></string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated</string>
+			</array>
+		</dict>
+		<dict>
+			<key>stationId</key>
+			<string>CRK1</string>
+			<key>stationName</key>
+			<string>Creek</string>
+			<key>stationLine</key>
+			<array>
+				<string>Green</string>
+			</array>
+			<key>stationZone</key>
+			<array>
+				<integer>6</integer>
+			</array>
+			<key>stationlatitude</key>
+			<real>25.218963</real>
+			<key>stationLongitude</key>
+			<real>55.33888</real>
+			<key>isStationOperational</key>
+			<false/>
+			<key>stationParking</key>
+			<string></string>
+			<key>stationAttractions</key>
+			<string></string>
+			<key>stationType</key>
+			<array>
+				<string>Elevated</string>
+			</array>
+		</dict>
+	</array>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
