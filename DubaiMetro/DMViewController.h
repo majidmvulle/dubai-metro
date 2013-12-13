@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface DMViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *customMapView;
-
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) CLLocation *currentLocation;
+- (void)setupMetroStation:(id)sender; //to call a segue
 @end
