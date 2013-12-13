@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <GoogleMaps/GoogleMaps.h>
+#import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController
-@property (nonatomic) CGRect mapViewFrame;
+#pragma mark - GreenPolyline
+@interface GreenPolyline : MKPolyline
+@end
+
+#pragma mark - RedPolyline
+@interface RedPolyline : MKPolyline
+@end
+
+@interface MapViewController : UIViewController <MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @end

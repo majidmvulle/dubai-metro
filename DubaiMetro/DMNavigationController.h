@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PKRevealController.h"
-#import "MenuTVC.h"
+#import "Settings.h"
 
 @interface DMNavigationController : UINavigationController
-@property (nonatomic, strong) PKRevealController *revealController;
-@property (nonatomic, strong) MenuTVC *menuTVC;
+@property (nonatomic, readonly) CGFloat navHeight;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @end

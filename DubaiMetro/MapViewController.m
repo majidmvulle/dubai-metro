@@ -7,65 +7,154 @@
 //
 
 #import "MapViewController.h"
+#import "MetroStation.h"
+#import "DMViewController.h"
+#import "MetroStationLine.h"
 
+#pragma mark - GreenPolyline
+@implementation GreenPolyline
+@end
 
-@interface MapViewController () <GMSMapViewDelegate, CLLocationManagerDelegate>
-@property (nonatomic, weak) GMSMapView *gmsMapView;
+#pragma mark - RedPolyline
+@implementation RedPolyline
+@end
+
+#pragma mark - MapViewController
+@interface MapViewController ()
 @end
 
 @implementation MapViewController
 
-- (void)setMapViewFrame:(CGRect)mapViewFrame
-{
-    _mapViewFrame = mapViewFrame;
-
-    NSLog(@"Frame: %@", NSStringFromCGRect(mapViewFrame));
-
-    [self setupGoogleMap];
-
-}
-
-- (void)setupGoogleMap
-{
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-
-        //Dubai: Lt: 25.271139, Lg: 55.307485
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:25.271139
-                                                            longitude:55.307485
-                                                                 zoom:6];
-    self.gmsMapView = [GMSMapView mapWithFrame:self.mapViewFrame camera:camera];
-    self.gmsMapView.myLocationEnabled = YES;
-    self.gmsMapView.delegate = self;
-    self.view = self.gmsMapView;
-
-        // Creates a marker in the center of the map.
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(25.271139, 55.307485);
-
-
-    marker.title = @"Dubai";
-    marker.snippet = @"UAE";
-    marker.map = self.gmsMapView;
-    
-}
-
-- (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate
-{
-    NSLog(@"You tapped at: %f, %f", coordinate.latitude, coordinate.longitude);
-}
+#pragma mark - UIViewController methods
 
 - (void)viewDidLoad
 {
-
     [super viewDidLoad];
- 
+
+    self.mapView.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.mapView.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+//    [self updateRegion];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.mapView.delegate = nil;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#ifdef DM_DEBUG
+    NSLog(@"Map View memory warning");
+#endif
+        // Dispose of any resources that can be recreated.
+}
+
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    _managedObjectContext = managedObjectContext;
+
+        //if I am onscreen
+    if(self.view.window) [self reload];
+}
+
+- (void)reload{}; //abstract
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    if([view.leftCalloutAccessoryView isKindOfClass:[UIImageView class]]){
+        UIImageView *imageView = (UIImageView *)(view.leftCalloutAccessoryView);
+        if([view.annotation respondsToSelector:@selector(thumbnail)]){
+            imageView.image = [view.annotation performSelector:@selector(thumbnail)];
+        }
+    }
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    if(annotation == self.mapView.userLocation){
+        return nil;
+    }else{
+        static NSString *reuseID = @"MapViewController";
+        MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseID];
+
+        if(!view){
+            view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseID];
+            view.canShowCallout = YES;
+
+            ((MKPinAnnotationView *)view).animatesDrop = YES;
+
+            if([mapView.delegate respondsToSelector:@selector(mapView:annotationView:calloutAccessoryControlTapped:)]){
+                view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeInfoLight];
+                if([DMHelper sharedInstance].isOS7AndAbove){
+                    view.rightCalloutAccessoryView.tintColor = BACKGROUND_COLOR;
+                    view.tintColor = BACKGROUND_COLOR;
+                }
+            }
+
+            view.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)]; //create a square (magic numbers, not good)
+        }
+
+        if([annotation isKindOfClass:[MetroStation class]] && [view isKindOfClass:[MKPinAnnotationView class]]){
+            MetroStation *station = (MetroStation *)annotation;
+            if(station){
+                if([station.stationLines count] > 1) ((MKPinAnnotationView *)view).pinColor = MKPinAnnotationColorPurple;
+                else{
+                    if([((MetroStationLine *)[station.stationLines anyObject]).stationLineCode isEqualToString:LINE_GREEN_CODE]){
+                        ((MKPinAnnotationView *)view).pinColor = MKPinAnnotationColorGreen;
+                    }else if([((MetroStationLine *)[station.stationLines anyObject]).stationLineCode isEqualToString:LINE_RED_CODE]){
+                        ((MKPinAnnotationView *)view).pinColor = MKPinAnnotationColorRed;
+                    }
+                }
+            }
+        }
+
+        return view;
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    if([self.parentViewController isKindOfClass:[DMViewController class]]){
+        @try {
+            if([view.annotation isKindOfClass:[MetroStation class]]){
+                MetroStation *station = view.annotation;
+                [(DMViewController *)self.parentViewController setupMetroStation:station];
+            }
+        }
+        @catch (NSException *exception) {
+#ifdef DM_DEBUG
+            NSLog(@"Couldn't segue: %@", exception);
+#endif
+        }
+    }
+}
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
+{
+    if([overlay isKindOfClass:[MKPolyline class]]){
+        MKPolylineView *lineView = [[MKPolylineView alloc] initWithPolyline:overlay];
+        lineView.lineWidth = 5;
+
+        if([overlay isKindOfClass:[GreenPolyline class]]) lineView.strokeColor = [UIColor greenColor];
+        if([overlay isKindOfClass:[RedPolyline class]]) lineView.strokeColor = [UIColor redColor];
+
+        return lineView;
+    }
+    
+    return nil;
 }
 
 @end

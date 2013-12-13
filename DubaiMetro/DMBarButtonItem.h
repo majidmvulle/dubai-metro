@@ -10,4 +10,8 @@
 
 @interface DMBarButtonItem : UIBarButtonItem
 - (void)setup;
+- (void)setupOrdinaryBackgroundImage;
+- (void)setupRedBackgroundImage;
+- (void)setupGreenBackgroundImage;
+- (void)setupBackButtonBackgroundImage;
 @end

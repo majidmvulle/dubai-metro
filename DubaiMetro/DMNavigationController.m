@@ -9,97 +9,66 @@
 #import "DMNavigationController.h"
 #import "DMBarButtonItem.h"
 
+
 @interface DMNavigationController ()
+@property (nonatomic, readwrite) CGFloat navHeight;
 @end
 
 @implementation DMNavigationController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+#pragma mark - UIViewController methods
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    
-    [self setup];
-    [self setupPKRevealController];
+
+    [DMHelper navigationControllerSetup:self];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    self.navHeight = self.navigationBar.frame.size.height;
     
-    [[[UIApplication sharedApplication] delegate] window].rootViewController = self.revealController;
-
-}
-
-- (MenuTVC *)menuTVC
-{
-    if(!_menuTVC) _menuTVC = [[MenuTVC alloc] init];
-
-    return _menuTVC;
-}
-
-- (void)setupPKRevealController
-{
-        // PKRevealController.h contains a list of all the specifiable options
-    NSDictionary *options = @{
-                              PKRevealControllerAllowsOverdrawKey : [NSNumber numberWithBool:YES],
-                              PKRevealControllerDisablesFrontViewInteractionKey : [NSNumber numberWithBool:YES]
-                              };
-
-    self.revealController = [PKRevealController revealControllerWithFrontViewController:self leftViewController:self.menuTVC options:options];
-}
-
-- (void)setup
-{
-    self.navigationBar.translucent = YES; // Setting this slides the view up, underneath the nav bar (otherwise it'll appear black)
-    const float colorMask[6] = {222, 255, 222, 255, 222, 255};
-    UIImage *img = [[UIImage alloc] init];
-    UIImage *maskedImage = [UIImage imageWithCGImage: CGImageCreateWithMaskingColors(img.CGImage, colorMask)];
-
-    [self.navigationBar setBackgroundImage:maskedImage forBarMetrics:UIBarMetricsDefault];
-        //remove shadow
-
-    if([self.navigationBar respondsToSelector:@selector(setShadowImage:)]){
-        [self.navigationBar setShadowImage:[[UIImage alloc] init]];
-    }
-
-    for(id item in self.navigationBar.items){
-
-        if([item isKindOfClass:[UINavigationItem class]]){
-            UINavigationItem *aNavigationItem = (UINavigationItem *)item;
-
-            NSArray *theBarButtonItems = [NSArray arrayWithObjects:aNavigationItem.leftBarButtonItems, aNavigationItem.rightBarButtonItems, nil];
-
-            for(id aBarButtonItems in theBarButtonItems){
-                if([aBarButtonItems isKindOfClass:[NSArray class]]){
-                    [aBarButtonItems enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop){
-                        if([obj isKindOfClass:[DMBarButtonItem class]]){
-                            [(DMBarButtonItem *)obj setup];
-                        }
-                    }];
-                }
-                
-            }
-            
-        }
-    }
-
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recreated.
+}
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [super pushViewController:viewController animated:animated];
+
+    UIImage *backImage = nil;
+
+    if([DMHelper sharedInstance].isOS7AndAbove){
+        backImage = [[UIImage imageNamed:@"btn-back.png"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
+    }else{
+        backImage = [UIImage imageNamed:@"btn-back.png"];
+    }
+
+    DMBarButtonItem *backButtonItem = [[DMBarButtonItem alloc] initWithImage:backImage
+                                                                       style:UIBarButtonItemStyleBordered
+                                                                      target:self action:@selector(dismiss)];
+
+    [backButtonItem setup];
+    viewController.navigationItem.leftBarButtonItem = backButtonItem;
+
+}
+
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    _managedObjectContext = managedObjectContext;
+}
+
+- (void)dismiss
+{
+    [self popViewControllerAnimated:YES];
 }
 
 @end
