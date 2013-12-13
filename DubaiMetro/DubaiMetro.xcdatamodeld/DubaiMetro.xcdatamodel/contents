@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3400" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MetroStation" representedClassName="MetroStation" syncable="YES">
+        <attribute name="isStationOperational" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="stationAttractions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stationId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stationLatitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="stationLongitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="stationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stationParking" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stationProximity" optional="YES" attributeType="Float" defaultValueString="-1" syncable="YES"/>
+        <attribute name="stationZone" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="boundToStations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrainBound" inverseName="boundFromStations" inverseEntity="TrainBound" syncable="YES"/>
+        <relationship name="stationLines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MetroStationLine" inverseName="metroStations" inverseEntity="MetroStationLine" syncable="YES"/>
+        <relationship name="stationOrders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MetroStationOrder" inverseName="station" inverseEntity="MetroStationOrder" syncable="YES"/>
+        <relationship name="stationTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MetroStationType" inverseName="stations" inverseEntity="MetroStationType" syncable="YES"/>
+    </entity>
+    <entity name="MetroStationLine" representedClassName="MetroStationLine" syncable="YES">
+        <attribute name="polylinePath" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="stationLineCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stationLineName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="metroStations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MetroStation" inverseName="stationLines" inverseEntity="MetroStation" syncable="YES"/>
+        <relationship name="peakTimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PeakTime" inverseName="stationLine" inverseEntity="PeakTime" syncable="YES"/>
+        <relationship name="stationOrders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MetroStationOrder" inverseName="stationLine" inverseEntity="MetroStationOrder" syncable="YES"/>
+    </entity>
+    <entity name="MetroStationOrder" representedClassName="MetroStationOrder" syncable="YES">
+        <attribute name="stationNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="station" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetroStation" inverseName="stationOrders" inverseEntity="MetroStation" syncable="YES"/>
+        <relationship name="stationLine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetroStationLine" inverseName="stationOrders" inverseEntity="MetroStationLine" syncable="YES"/>
+    </entity>
+    <entity name="MetroStationType" representedClassName="MetroStationType" syncable="YES">
+        <attribute name="stationTypeName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="stations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MetroStation" inverseName="stationTypes" inverseEntity="MetroStation" syncable="YES"/>
+    </entity>
+    <entity name="PeakTime" representedClassName="PeakTime" syncable="YES">
+        <attribute name="dayGroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eveningPeakFrom" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="eveningPeakTo" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="morningPeakFrom" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="morningPeakTo" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="stationLine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetroStationLine" inverseName="peakTimes" inverseEntity="MetroStationLine" syncable="YES"/>
+    </entity>
+    <entity name="TicketPrice" representedClassName="TicketPrice" syncable="YES">
+        <attribute name="t0" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="t1" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="t2" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="t3" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="TrainBound" representedClassName="TrainBound" syncable="YES">
+        <attribute name="boundStationId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="boundFromStations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MetroStation" inverseName="boundToStations" inverseEntity="MetroStation" syncable="YES"/>
+        <relationship name="trainTiming" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrainTiming" inverseName="trainBound" inverseEntity="TrainTiming" syncable="YES"/>
+    </entity>
+    <entity name="TrainTiming" representedClassName="TrainTiming" syncable="YES">
+        <attribute name="afterEveningPeak" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="beforeMorningPeak" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="dayGroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eveningPeak" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="firstTrain" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastTrain" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="morningPeak" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="offPeak" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="trainBound" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrainBound" inverseName="trainTiming" inverseEntity="TrainBound" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MetroStation" positionX="-2018" positionY="153" width="128" height="238"/>
+        <element name="MetroStationLine" positionX="-2313" positionY="405" width="128" height="135"/>
+        <element name="MetroStationOrder" positionX="-2243" positionY="594" width="128" height="88"/>
+        <element name="MetroStationType" positionX="-1802" positionY="411" width="128" height="75"/>
+        <element name="PeakTime" positionX="-2322" positionY="153" width="128" height="135"/>
+        <element name="TrainBound" positionX="-1737" positionY="162" width="128" height="90"/>
+        <element name="TrainTiming" positionX="-1559" positionY="36" width="128" height="180"/>
+        <element name="TicketPrice" positionX="-2151" positionY="-4" width="128" height="103"/>
+    </elements>
+</model>
