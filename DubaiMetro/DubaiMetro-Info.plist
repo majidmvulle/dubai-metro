@@ -8,8 +8,24 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>app-icon-spotlight-os7</string>
+				<string>app-icon-spotlight</string>
+				<string>app-icon-os7</string>
+				<string>app-icon.png</string>
+				<string>app-icon@2x.png</string>
+			</array>
+			<key>UIPrerenderedIcon</key>
+			<true/>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.majidmvulle.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.majidmvulle.dubaimetro</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -24,17 +40,39 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Frutiger LT 57 Condensed.ttf</string>
+		<string>Frutiger LT 55 Roman.ttf</string>
+		<string>Frutiger LT 45 Light.ttf</string>
+		<string>Frutiger LT 47 Light Condensed.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
+	<key>UILaunchImageFile</key>
+	<string>Default</string>
 	<key>UIMainStoryboardFile</key>
 	<string>iPhone</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
+		<string>location-services</string>
+		<string>magnetometer</string>
+		<string>gps</string>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleBlackTranslucent</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
