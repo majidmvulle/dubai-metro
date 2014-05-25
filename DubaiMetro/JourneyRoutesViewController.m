@@ -16,6 +16,9 @@
 #import "TrainTiming+Create.h"
 #import "TrainBound+Create.h"
 #import "TicketPrice+CreateFetch.h"
+#import "RideRemindViewController.h"
+#import "DMNavigationController.h"
+
 #define CELL_WIDTH 285.0f
 
 @interface JourneyRoutesViewController () <UICollectionViewDelegate,
@@ -32,16 +35,6 @@
 @implementation JourneyRoutesViewController
 
 @synthesize journeyRoutes = _journeyRoutes;
-
-- (IBAction)chooseRouteButtonTapped:(UIButton *)sender
-{
-
-    if([sender.superview isKindOfClass:[JourneyRoutesFooter class]]){
-//        NSIndexPath *indexPath = ((JourneyRoutesFooter *)sender.superview).indexPath;
-//        JourneyRoute *selectedRoute = [self journeyRouteAtIndexPath:indexPath];
-
-    }
-}
 
 - (void)viewDidLoad
 {
@@ -79,6 +72,34 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+
+
+
+    if([segue.identifier isEqualToString:@"setJourneyRoute:"]){
+        if([sender isKindOfClass:[JourneyRoutesFooter class]]){
+            NSIndexPath *indexPath = ((JourneyRoutesFooter *)sender).indexPath;
+
+            if(indexPath){
+                JourneyRoute *journeyRoute = [self journeyRouteAtIndexPath:indexPath];
+
+                if(journeyRoute){
+
+                    if([segue.destinationViewController isKindOfClass:[DMNavigationController class]]){
+                        DMNavigationController *navigationController = (DMNavigationController *)segue.destinationViewController;
+                        if([[[navigationController viewControllers] firstObject] isKindOfClass:[RideRemindViewController class]]){
+                            RideRemindViewController *rideRemind = (RideRemindViewController *)[[navigationController viewControllers] firstObject];
+
+                            rideRemind.journeyRoute = journeyRoute;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 - (NSArray *)journeyRoutes
@@ -164,11 +185,11 @@
 
     JourneyRoute *journeyRoute = [self journeyRouteAtIndexPath:indexPath];
 
-    cell.fromStationLabel.attributedText = [self applyLabelAtrributesForTitle:journeyRoute.fromStation.stationName subtitle:nil fontSize:14.0 strokeWidth:-4.0];
-    cell.fromTowardsLabel.attributedText = [self applyLabelAtrributesForTitle:[@"towards " stringByAppendingString:journeyRoute.towardsStation.stationName]
+    cell.fromStationLabel.attributedText = [self applyLabelAtrributesForTitle:[journeyRoute.fromStation.stationName uppercaseString] subtitle:nil fontSize:14.0 strokeWidth:-4.0];
+    cell.fromTowardsLabel.attributedText = [self applyLabelAtrributesForTitle:[@"towards " stringByAppendingString:[journeyRoute.towardsStation.stationName uppercaseString]]
                                                                      subtitle:nil fontSize:14.0 strokeWidth:0];
 
-    cell.toStationLabel.attributedText = [self applyLabelAtrributesForTitle:journeyRoute.toStation.stationName subtitle:nil fontSize:14.0 strokeWidth:-4.0];
+    cell.toStationLabel.attributedText = [self applyLabelAtrributesForTitle:[journeyRoute.toStation.stationName uppercaseString] subtitle:nil fontSize:14.0 strokeWidth:-4.0];
 
     cell.priceLabel.text = [NSString stringWithFormat:@"AED %.02f", self.journey.ticketPrice];
 
@@ -217,7 +238,7 @@
 
         //Do interchange Description Label
         UILabel *interchangeDescriptionLabel = [[UILabel alloc] init];
-        interchangeDescriptionLabel.attributedText = [self applyLabelAtrributesForTitle:journeyInterchange.interchangeStation.stationName
+        interchangeDescriptionLabel.attributedText = [self applyLabelAtrributesForTitle:[journeyInterchange.interchangeStation.stationName uppercaseString]
                                                                                subtitle:[@"towards " stringByAppendingString:journeyInterchange.towardsStation.stationName]
                                                                                fontSize:14.0 strokeWidth:-4.0];
 
@@ -274,7 +295,7 @@
         multiplier = 58.0f;
     }
 
-    int numberOfInterchanges = [((JourneyRoute *)[self journeyRouteAtIndexPath:indexPath]).interchanges count];
+    NSInteger numberOfInterchanges = [((JourneyRoute *)[self journeyRouteAtIndexPath:indexPath]).interchanges count];
 
     CGFloat height = cellHeight + (numberOfInterchanges * multiplier);
 
@@ -286,9 +307,11 @@
 
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
-           viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionReusableView *aReusableView = nil;
+
 
         //Route number - Header
         //Start Journey button - Footer
@@ -303,21 +326,27 @@
             NSString *stops = ((journeyRoute.numberOfStationsToTravel == 1) ? @"Stop" : @"Stops");
             NSString *interchanges = (([journeyRoute.interchanges count] == 1) ? @"Interchange" : @"Interchanges");
 
-            headerView.routeSummaryLabel.attributedText = [self applyLabelAtrributesForTitle:[NSString stringWithFormat:@"Route %d", (indexPath.section + 1)]
+            NSString *recommendedText = @"";
+
+            if([self.journeyRoutes count] > 1 && indexPath.section == 0 && indexPath.item == 0){
+                recommendedText = @" (Recommended)";
+            }
+
+            headerView.routeSummaryLabel.attributedText = [self applyLabelAtrributesForTitle:[NSString stringWithFormat:@"Route %d%@", (int)(indexPath.section + 1), recommendedText]
                                                                                subtitle:[NSString stringWithFormat:@"%d %@ %d %@",
-                                                                                         journeyRoute.numberOfStationsToTravel, stops,
-                                                                                         [journeyRoute.interchanges count], interchanges]
+                                                                                         (int)journeyRoute.numberOfStationsToTravel, stops,
+                                                                                         (int)[journeyRoute.interchanges count], interchanges]
                                                                                fontSize:15.0 strokeWidth:-4.0f];
 
             aReusableView = headerView;
 
         }else if([kind isEqualToString:UICollectionElementKindSectionFooter]){
-           /* JourneyRoutesFooter *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+           JourneyRoutesFooter *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                                             withReuseIdentifier:@"RouteFooter"
                                                                                    forIndexPath:indexPath];
             footerView.indexPath = indexPath;
-            aReusableView = footerView; */
-            aReusableView = nil;
+            aReusableView = footerView;
+
         }
     }
     
@@ -399,5 +428,12 @@
     cell.layer.borderWidth = 1.0;
     cell.layer.borderColor = [UIColor whiteColor].CGColor;
 }
+- (IBAction)footerButtonTapped:(UIButton *)sender
+{
+    if([sender.superview isKindOfClass:[JourneyRoutesFooter class]]){
+        [self performSegueWithIdentifier:@"setJourneyRoute:" sender:((JourneyRoutesFooter *)sender.superview)];
+    }
+}
+
 
 @end

@@ -113,7 +113,7 @@
 
 + (void)maskButton:(id)button
 {
-    const float colorMask[6] = {222, 255, 222, 255, 222, 255};
+    const CGFloat colorMask[6] = {222, 255, 222, 255, 222, 255};
     CGImageRef imageRef = CGImageCreateWithMaskingColors([[UIImage alloc] init].CGImage, colorMask);
     UIImage *image = [UIImage imageWithCGImage: imageRef];
 
@@ -129,7 +129,7 @@
 {
 
     navigationController.navigationBar.translucent = NO; //iOS 7 sets it to YES by default
-    const float colorMask[6] = {23, 255, 30, 255, 49, 255};
+    const CGFloat colorMask[6] = {23, 255, 30, 255, 49, 255};
     CGImageRef imageRef = CGImageCreateWithMaskingColors([[UIImage alloc] init].CGImage, colorMask);
     UIImage *maskedImage = [UIImage imageWithCGImage: imageRef];
 

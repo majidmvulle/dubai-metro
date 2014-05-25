@@ -26,23 +26,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.needUpdateRegion = YES;
     [self setupToolBar];
 
     self.mapView.mapType = [Settings sharedInstance].mapType;
-    self.mapView.userTrackingMode = MKUserTrackingModeFollowWithHeading;
-
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+    [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if(self.needUpdateRegion) [self updateRegion];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,19 +47,23 @@
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
-    if(self.needUpdateRegion) [self updateRegion];
+         if(self.needUpdateRegion) [self updateRegion];
 }
+
 
 - (void)reload
 {
     if(self.managedObjectContext){
+
+        self.needUpdateRegion = YES;
+
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"MetroStation"];
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"stationName" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
         request.predicate = nil; //All records.
         NSError *error = nil;
 
         NSArray *stations = [self.managedObjectContext executeFetchRequest:request error:&error];
-        
+
         if(!stations || error){
 #ifdef DM_DEBUG
             NSLog(@"Map View Error: %@", error);
@@ -164,7 +162,7 @@
     }
 
     if(started){
-        boundingRect = CGRectInset(boundingRect, -0.02, -0.02);
+        boundingRect = CGRectInset(boundingRect, -0.04, -0.04);
 
         if((boundingRect.size.width < 20) && (boundingRect.size.height < 20)){
             MKCoordinateRegion region;

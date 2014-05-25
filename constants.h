@@ -48,6 +48,7 @@
 
 #define SAFARI @"Safari"
 #define CHROME @"Chrome"
-#define APPURL @"http://majidmvulle.com/dubaimetro?utm_source=dubaimetroapp&utm_medium=app&utm_campaign=aboutpage"
+#define APP_WEBPAGE @"http://majidmvulle.com/dubaimetro?utm_source=dubaimetroapp&utm_medium=app&utm_campaign=aboutpage"
+#define APPSTORE_SHORT_URL @"https://appsto.re/ae/HcFEU.i"
 
 #define FONT_COURIER @"Courier"

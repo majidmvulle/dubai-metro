@@ -25,6 +25,7 @@ typedef struct {CLLocationCoordinate2D coordinate; CLLocationDistance radius;} D
 @property (nonatomic, assign) id <DMLocationManagerDelegate>dmLocationDelegate;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CLLocation *currentLocation;
+@property (nonatomic, strong, readonly) NSNumber *calculatedSpeed;
 + (DMLocationManager *)sharedInstance;
 - (void)startStandardChangeUpdates;
 - (void)startStandardChangeUpdatesWithHeading;
@@ -33,4 +34,5 @@ typedef struct {CLLocationCoordinate2D coordinate; CLLocationDistance radius;} D
 - (void)stopSignificantChangeUpdates;
 - (BOOL)registerRegionWithCircularOverlay:(DMCircularOverlay)overlay andIdentifier:(NSString*)identifier;
 - (BOOL)isAuthorized;
+- (void)requestNewLocation;
 @end

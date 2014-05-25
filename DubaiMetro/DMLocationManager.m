@@ -8,6 +8,10 @@
 
 #import "DMLocationManager.h"
 
+@interface DMLocationManager()
+@property (nonatomic, strong, readwrite) NSNumber *calculatedSpeed;
+@end
+
 @implementation DMLocationManager
 
 #define DISTANCE_FILTER 10
@@ -128,22 +132,50 @@
     return YES;
 }
 
+- (void)requestNewLocation {
+    [self.locationManager stopUpdatingLocation];
+    [self.locationManager startUpdatingLocation];
+}
+
 #pragma mark - CLLocationManager Delegate methods
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
         // If it's a relatively recent event, turn off updates to save power
-    CLLocation *location = [locations lastObject];
+    CLLocation *newLocation = [locations lastObject];
 
-    NSDate *eventDate = location.timestamp;
+    NSDate *eventDate = newLocation.timestamp;
 
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
 
+    NSUInteger newLocationIndex = [locations indexOfObject:newLocation];
+    CLLocation *previousLocation = nil;
+
+
+
+    if([locations count] > 1){ //there is a previous location
+        previousLocation = locations[(newLocationIndex - 1)];
+
+        if(previousLocation){
+            CLLocationDistance distanceChange = [newLocation distanceFromLocation:previousLocation];
+
+            NSTimeInterval sinceLastUpdate = [newLocation.timestamp timeIntervalSinceDate:previousLocation.timestamp];
+
+            self.calculatedSpeed = [NSNumber numberWithDouble:(distanceChange / sinceLastUpdate)];
+
+        }
+    }
+
+
+
+
     if (abs(howRecent) < HOW_RECENT_INTERVAL) {
             // If the event is recent, do something with it.
-
-        if(dmLocationDelegate) [dmLocationDelegate currentLocationChangedTo:location];
+        if(dmLocationDelegate) [dmLocationDelegate currentLocationChangedTo:newLocation];
     }
+
+
+
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
@@ -161,9 +193,11 @@
         CLLocationDirection theHeading = ((newHeading.trueHeading > 0) ? newHeading.trueHeading : newHeading.magneticHeading);
 
         if(dmLocationDelegate){
-            if([dmLocationDelegate respondsToSelector:@selector(currentHeadingChangedTo:)]){
-                [dmLocationDelegate currentHeadingChangedTo:theHeading];
-            }
+
+                if([dmLocationDelegate respondsToSelector:@selector(currentHeadingChangedTo:)]){
+                    [dmLocationDelegate currentHeadingChangedTo:theHeading];
+                }
+
         }
     }
 }

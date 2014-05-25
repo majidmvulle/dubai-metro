@@ -30,7 +30,6 @@
 		1C29D7D318016E7D00859905 /* menu-dashboard-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C29D7CF18016E7D00859905 /* menu-dashboard-gray@2x.png */; };
 		1C29D7D418016E7D00859905 /* menu-dashboard-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C29D7D018016E7D00859905 /* menu-dashboard-white.png */; };
 		1C29D7D518016E7D00859905 /* menu-dashboard-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C29D7D118016E7D00859905 /* menu-dashboard-white@2x.png */; };
-		1C2B5404185B216D00C69031 /* MetroStations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C2B5403185B216D00C69031 /* MetroStations.plist */; };
 		1C3006CE17FAE55400DFB81C /* menu-about-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3006B217FAE55300DFB81C /* menu-about-gray.png */; };
 		1C3006CF17FAE55400DFB81C /* menu-about-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3006B317FAE55300DFB81C /* menu-about-gray@2x.png */; };
 		1C3006D017FAE55400DFB81C /* menu-about-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3006B417FAE55300DFB81C /* menu-about-white.png */; };
@@ -66,7 +65,7 @@
 		1C3023C417CBF32E007BA845 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3023C317CBF32E007BA845 /* main.m */; };
 		1C3023C817CBF32E007BA845 /* DubaiMetroAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3023C717CBF32E007BA845 /* DubaiMetroAppDelegate.m */; };
 		1C3023D117CBF32E007BA845 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3023CF17CBF32E007BA845 /* iPhone.storyboard */; };
-		1C3023D417CBF32E007BA845 /* DMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3023D317CBF32E007BA845 /* DMViewController.m */; };
+		1C307D0018F2400B0093148F /* LoadingOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C307CFF18F2400B0093148F /* LoadingOverlay.m */; };
 		1C30FC2017E1917400283104 /* Frutiger LT 55 Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C30FC1F17E1917400283104 /* Frutiger LT 55 Roman.ttf */; };
 		1C30FC2817E19F6900283104 /* Frutiger LT 57 Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C30FC2717E19F6900283104 /* Frutiger LT 57 Condensed.ttf */; };
 		1C30FC3317E1AA1400283104 /* btn-blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C30FC2D17E1AA1400283104 /* btn-blue.jpg */; };
@@ -84,7 +83,6 @@
 		1C3FA481184B469B002A9B17 /* about-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3FA47F184B469B002A9B17 /* about-logo.png */; };
 		1C3FA482184B469B002A9B17 /* about-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3FA480184B469B002A9B17 /* about-logo@2x.png */; };
 		1C3FA551184B6326002A9B17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3FA550184B6326002A9B17 /* SystemConfiguration.framework */; };
-		1C3FA572184B66C0002A9B17 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3FA571184B66C0002A9B17 /* libGoogleAnalyticsServices.a */; };
 		1C3FA574184B67EC002A9B17 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3FA573184B67EC002A9B17 /* libz.dylib */; };
 		1C3FA576184B6823002A9B17 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3FA575184B6823002A9B17 /* AdSupport.framework */; };
 		1C45256C17DE25E900FF38FA /* map-marker-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C45256A17DE25E900FF38FA /* map-marker-green.png */; };
@@ -92,11 +90,11 @@
 		1C45256F17DE288B00FF38FA /* map-marker-red-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C45256E17DE288B00FF38FA /* map-marker-red-green.png */; };
 		1C4572E017DDB69300DF7B81 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4572DF17DDB69300DF7B81 /* CoreDataHelper.m */; };
 		1C4572E317DDB71800DF7B81 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4572E217DDB71800DF7B81 /* CoreDataTableViewController.m */; };
-		1C4572EA17DDBB8D00DF7B81 /* DubaiMetro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C4572E817DDBB8D00DF7B81 /* DubaiMetro.xcdatamodeld */; };
 		1C45731217DDC62300DF7B81 /* MetroStationType+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C45731117DDC62300DF7B81 /* MetroStationType+Create.m */; };
 		1C45731A17DDC67D00DF7B81 /* MetroStationLine+CreateFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C45731917DDC67D00DF7B81 /* MetroStationLine+CreateFetch.m */; };
 		1C45732717DDF72B00DF7B81 /* AllMetroStationsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C45732617DDF72B00DF7B81 /* AllMetroStationsMapViewController.m */; };
 		1C458C84181E97FD00F03882 /* JourneyRoutesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C458C83181E97FD00F03882 /* JourneyRoutesViewController.m */; };
+		1C45AC1418E36B6600707F01 /* MetroStations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C45AC1318E36B6600707F01 /* MetroStations.plist */; };
 		1C4B9CCB17EEDC870027ACA6 /* app-icon-os7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B9CC717EEDC870027ACA6 /* app-icon-os7.png */; };
 		1C4B9CCC17EEDC870027ACA6 /* app-icon-spotlight-os7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B9CC817EEDC870027ACA6 /* app-icon-spotlight-os7.png */; };
 		1C4B9CCD17EEDC870027ACA6 /* app-icon-spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B9CC917EEDC870027ACA6 /* app-icon-spotlight.png */; };
@@ -107,6 +105,9 @@
 		1C539E0917D527320074B63E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C539E0817D527320074B63E /* MapViewController.m */; };
 		1C539E1517D539910074B63E /* DMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C539E1417D539910074B63E /* DMNavigationController.m */; };
 		1C539E1E17D5447B0074B63E /* menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C539E1D17D5447B0074B63E /* menu-icon.png */; };
+		1C5B361618FB32390056F2CC /* RideRemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5B361518FB32390056F2CC /* RideRemindViewController.m */; };
+		1C5B361F18FC4F4B0056F2CC /* RideRemindDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5B361E18FC4F4B0056F2CC /* RideRemindDashboardViewController.m */; };
+		1C5B362218FC5B820056F2CC /* DMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5B362118FC5B820056F2CC /* DMViewController.m */; };
 		1C5B5EB917F1A0C3007805C2 /* TrainBound+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5B5EB817F1A0C3007805C2 /* TrainBound+Create.m */; };
 		1C628A3717DC8354007F8E96 /* DMDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C628A3517DC8354007F8E96 /* DMDashboardViewController.m */; };
 		1C648B5D184136E400490C60 /* btn-clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C648B5C184136E400490C60 /* btn-clear.png */; };
@@ -122,6 +123,8 @@
 		1C7AAC7E17EE196200C25B59 /* map-annotation-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7AAC7A17EE196200C25B59 /* map-annotation-blue@2x.png */; };
 		1C7AAC7F17EE196200C25B59 /* map-annotation-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7AAC7B17EE196200C25B59 /* map-annotation-white.png */; };
 		1C7AAC8017EE196200C25B59 /* map-annotation-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7AAC7C17EE196200C25B59 /* map-annotation-white@2x.png */; };
+		1C7AB74518E0B3A10014A088 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7AB74418E0B3A10014A088 /* libGoogleAnalyticsServices.a */; };
+		1C88800218E7657000BE91E8 /* DubaiMetro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C88800018E7657000BE91E8 /* DubaiMetro.xcdatamodeld */; };
 		1C8A28BC17E9E63000C1037B /* JourneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A28BB17E9E63000C1037B /* JourneyTableViewController.m */; };
 		1C8A28C317EA163800C1037B /* btn-ordinary.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A28C117EA163800C1037B /* btn-ordinary.jpg */; };
 		1C8A28C417EA163800C1037B /* btn-ordinary@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8A28C217EA163800C1037B /* btn-ordinary@2x.jpg */; };
@@ -162,9 +165,15 @@
 		1CB37006182650CB00A77676 /* MetroStationOrder+CreateFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB37005182650CB00A77676 /* MetroStationOrder+CreateFetch.m */; };
 		1CB3F34917F17E0600C966CC /* TrainTiming+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3F34817F17E0600C966CC /* TrainTiming+Create.m */; };
 		1CB64CC0181D4C980080A56D /* DMDashboardStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB64CBF181D4C980080A56D /* DMDashboardStatusView.m */; };
+		1CB9CFD518E0D9B700181DBA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB9CFD418E0D9B700181DBA /* StoreKit.framework */; };
+		1CBFF6DA18E0D37500FBB66B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFF6D918E0D37500FBB66B /* HomeViewController.m */; };
 		1CD0152D180DA5F300B37D9A /* City Tower 1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1CD0152C180DA5F300B37D9A /* City Tower 1.gpx */; };
 		1CD01530180DD09B00B37D9A /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD0152F180DD09B00B37D9A /* Settings.m */; };
 		1CDC457D17FCC862003E34BB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC457C17FCC862003E34BB /* MenuViewController.m */; };
+		1CDF87B618ECF939007C4BA3 /* menu-ride-remind-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CDF87B218ECF939007C4BA3 /* menu-ride-remind-gray.png */; };
+		1CDF87B718ECF939007C4BA3 /* menu-ride-remind-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CDF87B318ECF939007C4BA3 /* menu-ride-remind-gray@2x.png */; };
+		1CDF87B818ECF939007C4BA3 /* menu-ride-remind-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CDF87B418ECF939007C4BA3 /* menu-ride-remind-white.png */; };
+		1CDF87B918ECF939007C4BA3 /* menu-ride-remind-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CDF87B518ECF939007C4BA3 /* menu-ride-remind-white@2x.png */; };
 		1CE093E8181327BA0012C4D7 /* Emirates Towers MS.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1CE093E7181327BA0012C4D7 /* Emirates Towers MS.gpx */; };
 		1CF0ACB117E6F68700953147 /* DMHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0ACB017E6F68500953147 /* DMHelper.m */; };
 		1CF0ACFA17E85B6B00953147 /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0ACF817E85B6B00953147 /* btn-back.png */; };
@@ -216,7 +225,6 @@
 		1C29D7CF18016E7D00859905 /* menu-dashboard-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-dashboard-gray@2x.png"; sourceTree = "<group>"; };
 		1C29D7D018016E7D00859905 /* menu-dashboard-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-dashboard-white.png"; sourceTree = "<group>"; };
 		1C29D7D118016E7D00859905 /* menu-dashboard-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-dashboard-white@2x.png"; sourceTree = "<group>"; };
-		1C2B5403185B216D00C69031 /* MetroStations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MetroStations.plist; sourceTree = "<group>"; };
 		1C3006B217FAE55300DFB81C /* menu-about-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-about-gray.png"; sourceTree = "<group>"; };
 		1C3006B317FAE55300DFB81C /* menu-about-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-about-gray@2x.png"; sourceTree = "<group>"; };
 		1C3006B417FAE55300DFB81C /* menu-about-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-about-white.png"; sourceTree = "<group>"; };
@@ -256,8 +264,9 @@
 		1C3023C617CBF32E007BA845 /* DubaiMetroAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DubaiMetroAppDelegate.h; sourceTree = "<group>"; };
 		1C3023C717CBF32E007BA845 /* DubaiMetroAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DubaiMetroAppDelegate.m; sourceTree = "<group>"; };
 		1C3023D017CBF32E007BA845 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
-		1C3023D217CBF32E007BA845 /* DMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMViewController.h; sourceTree = "<group>"; };
-		1C3023D317CBF32E007BA845 /* DMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMViewController.m; sourceTree = "<group>"; };
+		1C3023D217CBF32E007BA845 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		1C307CFE18F2400B0093148F /* LoadingOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingOverlay.h; sourceTree = "<group>"; };
+		1C307CFF18F2400B0093148F /* LoadingOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingOverlay.m; sourceTree = "<group>"; };
 		1C30FC1F17E1917400283104 /* Frutiger LT 55 Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Frutiger LT 55 Roman.ttf"; sourceTree = "<group>"; };
 		1C30FC2717E19F6900283104 /* Frutiger LT 57 Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Frutiger LT 57 Condensed.ttf"; sourceTree = "<group>"; };
 		1C30FC2D17E1AA1400283104 /* btn-blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "btn-blue.jpg"; sourceTree = "<group>"; };
@@ -277,13 +286,6 @@
 		1C3FA47F184B469B002A9B17 /* about-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-logo.png"; sourceTree = "<group>"; };
 		1C3FA480184B469B002A9B17 /* about-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-logo@2x.png"; sourceTree = "<group>"; };
 		1C3FA550184B6326002A9B17 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		1C3FA56B184B66C0002A9B17 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		1C3FA56C184B66C0002A9B17 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		1C3FA56D184B66C0002A9B17 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
-		1C3FA56E184B66C0002A9B17 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
-		1C3FA56F184B66C0002A9B17 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		1C3FA570184B66C0002A9B17 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		1C3FA571184B66C0002A9B17 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		1C3FA573184B67EC002A9B17 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1C3FA575184B6823002A9B17 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		1C45256A17DE25E900FF38FA /* map-marker-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-marker-green.png"; sourceTree = "<group>"; };
@@ -294,7 +296,6 @@
 		1C4572DF17DDB69300DF7B81 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		1C4572E117DDB71800DF7B81 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		1C4572E217DDB71800DF7B81 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
-		1C4572E917DDBB8D00DF7B81 /* DubaiMetro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DubaiMetro.xcdatamodel; sourceTree = "<group>"; };
 		1C45731017DDC62300DF7B81 /* MetroStationType+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MetroStationType+Create.h"; sourceTree = "<group>"; };
 		1C45731117DDC62300DF7B81 /* MetroStationType+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MetroStationType+Create.m"; sourceTree = "<group>"; };
 		1C45731817DDC67D00DF7B81 /* MetroStationLine+CreateFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MetroStationLine+CreateFetch.h"; sourceTree = "<group>"; };
@@ -303,6 +304,7 @@
 		1C45732617DDF72B00DF7B81 /* AllMetroStationsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllMetroStationsMapViewController.m; sourceTree = "<group>"; };
 		1C458C82181E97FD00F03882 /* JourneyRoutesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyRoutesViewController.h; sourceTree = "<group>"; };
 		1C458C83181E97FD00F03882 /* JourneyRoutesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyRoutesViewController.m; sourceTree = "<group>"; };
+		1C45AC1318E36B6600707F01 /* MetroStations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MetroStations.plist; sourceTree = "<group>"; };
 		1C4B9CC717EEDC870027ACA6 /* app-icon-os7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-os7.png"; sourceTree = "<group>"; };
 		1C4B9CC817EEDC870027ACA6 /* app-icon-spotlight-os7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-spotlight-os7.png"; sourceTree = "<group>"; };
 		1C4B9CC917EEDC870027ACA6 /* app-icon-spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-spotlight.png"; sourceTree = "<group>"; };
@@ -316,6 +318,12 @@
 		1C539E1317D539910074B63E /* DMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMNavigationController.h; sourceTree = "<group>"; };
 		1C539E1417D539910074B63E /* DMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMNavigationController.m; sourceTree = "<group>"; };
 		1C539E1D17D5447B0074B63E /* menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-icon.png"; sourceTree = "<group>"; };
+		1C5B361418FB32390056F2CC /* RideRemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideRemindViewController.h; sourceTree = "<group>"; };
+		1C5B361518FB32390056F2CC /* RideRemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideRemindViewController.m; sourceTree = "<group>"; };
+		1C5B361D18FC4F4B0056F2CC /* RideRemindDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideRemindDashboardViewController.h; sourceTree = "<group>"; };
+		1C5B361E18FC4F4B0056F2CC /* RideRemindDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideRemindDashboardViewController.m; sourceTree = "<group>"; };
+		1C5B362018FC5B820056F2CC /* DMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMViewController.h; sourceTree = "<group>"; };
+		1C5B362118FC5B820056F2CC /* DMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMViewController.m; sourceTree = "<group>"; };
 		1C5B5EB717F1A0C3007805C2 /* TrainBound+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TrainBound+Create.h"; sourceTree = "<group>"; };
 		1C5B5EB817F1A0C3007805C2 /* TrainBound+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TrainBound+Create.m"; sourceTree = "<group>"; };
 		1C628A3417DC8354007F8E96 /* DMDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDashboardViewController.h; sourceTree = "<group>"; };
@@ -335,6 +343,14 @@
 		1C7AAC7A17EE196200C25B59 /* map-annotation-blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-annotation-blue@2x.png"; sourceTree = "<group>"; };
 		1C7AAC7B17EE196200C25B59 /* map-annotation-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-annotation-white.png"; sourceTree = "<group>"; };
 		1C7AAC7C17EE196200C25B59 /* map-annotation-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-annotation-white@2x.png"; sourceTree = "<group>"; };
+		1C7AB73E18E0B3740014A088 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		1C7AB73F18E0B3740014A088 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		1C7AB74018E0B3740014A088 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		1C7AB74118E0B3740014A088 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		1C7AB74218E0B3740014A088 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		1C7AB74318E0B3740014A088 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		1C7AB74418E0B3A10014A088 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		1C88800118E7657000BE91E8 /* DubaiMetro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DubaiMetro.xcdatamodel; sourceTree = "<group>"; };
 		1C8A28BA17E9E63000C1037B /* JourneyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyTableViewController.h; sourceTree = "<group>"; };
 		1C8A28BB17E9E63000C1037B /* JourneyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyTableViewController.m; sourceTree = "<group>"; };
 		1C8A28C117EA163800C1037B /* btn-ordinary.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "btn-ordinary.jpg"; sourceTree = "<group>"; };
@@ -399,11 +415,17 @@
 		1CB3F34717F17E0600C966CC /* TrainTiming+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TrainTiming+Create.h"; sourceTree = "<group>"; };
 		1CB3F34817F17E0600C966CC /* TrainTiming+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TrainTiming+Create.m"; sourceTree = "<group>"; };
 		1CB64CBF181D4C980080A56D /* DMDashboardStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDashboardStatusView.m; sourceTree = "<group>"; };
+		1CB9CFD418E0D9B700181DBA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		1CBFF6D918E0D37500FBB66B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		1CD0152C180DA5F300B37D9A /* City Tower 1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "City Tower 1.gpx"; sourceTree = "<group>"; };
 		1CD0152E180DD09B00B37D9A /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		1CD0152F180DD09B00B37D9A /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		1CDC457B17FCC862003E34BB /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		1CDC457C17FCC862003E34BB /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		1CDF87B218ECF939007C4BA3 /* menu-ride-remind-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-ride-remind-gray.png"; sourceTree = "<group>"; };
+		1CDF87B318ECF939007C4BA3 /* menu-ride-remind-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-ride-remind-gray@2x.png"; sourceTree = "<group>"; };
+		1CDF87B418ECF939007C4BA3 /* menu-ride-remind-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-ride-remind-white.png"; sourceTree = "<group>"; };
+		1CDF87B518ECF939007C4BA3 /* menu-ride-remind-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-ride-remind-white@2x.png"; sourceTree = "<group>"; };
 		1CE093E7181327BA0012C4D7 /* Emirates Towers MS.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Emirates Towers MS.gpx"; sourceTree = "<group>"; };
 		1CF0ACAF17E6F68400953147 /* DMHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHelper.h; sourceTree = "<group>"; };
 		1CF0ACB017E6F68500953147 /* DMHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHelper.m; sourceTree = "<group>"; };
@@ -433,18 +455,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB9CFD518E0D9B700181DBA /* StoreKit.framework in Frameworks */,
 				1C3FA576184B6823002A9B17 /* AdSupport.framework in Frameworks */,
 				1C3FA574184B67EC002A9B17 /* libz.dylib in Frameworks */,
 				1C3FA551184B6326002A9B17 /* SystemConfiguration.framework in Frameworks */,
 				1CFD7776180CA4620068AB9F /* MessageUI.framework in Frameworks */,
 				1C9FDA4817EAF7D600DF18ED /* MapKit.framework in Frameworks */,
-				1C3FA572184B66C0002A9B17 /* libGoogleAnalyticsServices.a in Frameworks */,
 				1C539E0217D524F80074B63E /* QuartzCore.framework in Frameworks */,
 				1C539DF417D524AB0074B63E /* CoreLocation.framework in Frameworks */,
 				1C539DF017D5249C0074B63E /* CoreData.framework in Frameworks */,
 				1C3023B817CBF32E007BA845 /* UIKit.framework in Frameworks */,
 				1C3023BA17CBF32E007BA845 /* Foundation.framework in Frameworks */,
 				1C3023BC17CBF32E007BA845 /* CoreGraphics.framework in Frameworks */,
+				1C7AB74518E0B3A10014A088 /* libGoogleAnalyticsServices.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +528,10 @@
 		1C3006B117FAE55300DFB81C /* menu */ = {
 			isa = PBXGroup;
 			children = (
+				1CDF87B218ECF939007C4BA3 /* menu-ride-remind-gray.png */,
+				1CDF87B318ECF939007C4BA3 /* menu-ride-remind-gray@2x.png */,
+				1CDF87B418ECF939007C4BA3 /* menu-ride-remind-white.png */,
+				1CDF87B518ECF939007C4BA3 /* menu-ride-remind-white@2x.png */,
 				1C29D7CE18016E7D00859905 /* menu-dashboard-gray.png */,
 				1C29D7CF18016E7D00859905 /* menu-dashboard-gray@2x.png */,
 				1C29D7D018016E7D00859905 /* menu-dashboard-white.png */,
@@ -567,6 +594,7 @@
 		1C3023B617CBF32E007BA845 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1CB9CFD418E0D9B700181DBA /* StoreKit.framework */,
 				1C3FA575184B6823002A9B17 /* AdSupport.framework */,
 				1C3FA573184B67EC002A9B17 /* libz.dylib */,
 				1C3FA550184B6326002A9B17 /* SystemConfiguration.framework */,
@@ -587,8 +615,11 @@
 			children = (
 				1C3023CF17CBF32E007BA845 /* iPhone.storyboard */,
 				1C539E0617D526060074B63E /* constants.h */,
-				1C3023D217CBF32E007BA845 /* DMViewController.h */,
-				1C3023D317CBF32E007BA845 /* DMViewController.m */,
+				1C5B362018FC5B820056F2CC /* DMViewController.h */,
+				1C5B362118FC5B820056F2CC /* DMViewController.m */,
+				1C3023D217CBF32E007BA845 /* HomeViewController.h */,
+				1CBFF6D918E0D37500FBB66B /* HomeViewController.m */,
+				1C5B361C18FC4F0E0056F2CC /* RideRemind */,
 				1C648B6718415CE100490C60 /* Intro */,
 				1C8A28BD17E9E63700C1037B /* Journey */,
 				1CF0ACB217E6F69400953147 /* Helpers */,
@@ -608,7 +639,7 @@
 		1C3023BE17CBF32E007BA845 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1C3FA56A184B66C0002A9B17 /* GoogleAnalytics_3.0.2 */,
+				1C7AB73D18E0B3740014A088 /* GoogleAnalytics */,
 				1CFD7771180C9E9E0068AB9F /* OpenInChrome */,
 				1C948A9A17D66316001935F0 /* PKRevealController */,
 				1C3023C617CBF32E007BA845 /* DubaiMetroAppDelegate.h */,
@@ -652,20 +683,6 @@
 			name = "Location Manager";
 			sourceTree = "<group>";
 		};
-		1C3FA56A184B66C0002A9B17 /* GoogleAnalytics_3.0.2 */ = {
-			isa = PBXGroup;
-			children = (
-				1C3FA56B184B66C0002A9B17 /* GAI.h */,
-				1C3FA56C184B66C0002A9B17 /* GAIDictionaryBuilder.h */,
-				1C3FA56D184B66C0002A9B17 /* GAIFields.h */,
-				1C3FA56E184B66C0002A9B17 /* GAILogger.h */,
-				1C3FA56F184B66C0002A9B17 /* GAITrackedViewController.h */,
-				1C3FA570184B66C0002A9B17 /* GAITracker.h */,
-				1C3FA571184B66C0002A9B17 /* libGoogleAnalyticsServices.a */,
-			);
-			path = GoogleAnalytics_3.0.2;
-			sourceTree = "<group>";
-		};
 		1C4572E417DDB71F00DF7B81 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,8 +698,8 @@
 		1C4572F717DDC3B900DF7B81 /* Metro Station */ = {
 			isa = PBXGroup;
 			children = (
-				1C4572E817DDBB8D00DF7B81 /* DubaiMetro.xcdatamodeld */,
-				1C2B5403185B216D00C69031 /* MetroStations.plist */,
+				1C88800018E7657000BE91E8 /* DubaiMetro.xcdatamodeld */,
+				1C45AC1318E36B6600707F01 /* MetroStations.plist */,
 				1C0E4DE817F8ACC10045A30A /* Misc. */,
 				1CB3F33F17F1788300C966CC /* TrainTiming */,
 				1CB3F34017F1788E00C966CC /* TrainBound */,
@@ -791,6 +808,17 @@
 			path = DubaiMetro;
 			sourceTree = "<group>";
 		};
+		1C5B361C18FC4F0E0056F2CC /* RideRemind */ = {
+			isa = PBXGroup;
+			children = (
+				1C5B361D18FC4F4B0056F2CC /* RideRemindDashboardViewController.h */,
+				1C5B361E18FC4F4B0056F2CC /* RideRemindDashboardViewController.m */,
+				1C5B361418FB32390056F2CC /* RideRemindViewController.h */,
+				1C5B361518FB32390056F2CC /* RideRemindViewController.m */,
+			);
+			name = RideRemind;
+			sourceTree = "<group>";
+		};
 		1C628A3317DC5545007F8E96 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -834,11 +862,23 @@
 			name = TrainTime;
 			sourceTree = "<group>";
 		};
+		1C7AB73D18E0B3740014A088 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				1C7AB74418E0B3A10014A088 /* libGoogleAnalyticsServices.a */,
+				1C7AB73E18E0B3740014A088 /* GAI.h */,
+				1C7AB73F18E0B3740014A088 /* GAIDictionaryBuilder.h */,
+				1C7AB74018E0B3740014A088 /* GAIFields.h */,
+				1C7AB74118E0B3740014A088 /* GAILogger.h */,
+				1C7AB74218E0B3740014A088 /* GAITrackedViewController.h */,
+				1C7AB74318E0B3740014A088 /* GAITracker.h */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
 		1C8A28BD17E9E63700C1037B /* Journey */ = {
 			isa = PBXGroup;
 			children = (
-				1C8A28C517EA2A8500C1037B /* Journey.h */,
-				1C8A28C617EA2A8500C1037B /* Journey.m */,
 				1C8A28BA17E9E63000C1037B /* JourneyTableViewController.h */,
 				1C8A28BB17E9E63000C1037B /* JourneyTableViewController.m */,
 				1CA302901820467C0035882A /* JourneyRoutesCollectionViewCell.h */,
@@ -849,6 +889,8 @@
 				1CB36FEB1826334500A77676 /* JourneyRoutesHeader.m */,
 				1CB1040A184A778200307341 /* JourneyRoutesFooter.h */,
 				1CB1040B184A778200307341 /* JourneyRoutesFooter.m */,
+				1C8A28C517EA2A8500C1037B /* Journey.h */,
+				1C8A28C617EA2A8500C1037B /* Journey.m */,
 			);
 			name = Journey;
 			sourceTree = "<group>";
@@ -969,6 +1011,8 @@
 			children = (
 				1CF0ACAF17E6F68400953147 /* DMHelper.h */,
 				1CF0ACB017E6F68500953147 /* DMHelper.m */,
+				1C307CFE18F2400B0093148F /* LoadingOverlay.h */,
+				1C307CFF18F2400B0093148F /* LoadingOverlay.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1077,7 +1121,7 @@
 				1C7AAC7E17EE196200C25B59 /* map-annotation-blue@2x.png in Resources */,
 				1C7AAC7D17EE196200C25B59 /* map-annotation-blue.png in Resources */,
 				1C2251FA17DCAE72003B19D0 /* Frutiger LT 45 Light.ttf in Resources */,
-				1C2B5404185B216D00C69031 /* MetroStations.plist in Resources */,
+				1C45AC1418E36B6600707F01 /* MetroStations.plist in Resources */,
 				1C3006DA17FAE55400DFB81C /* menu-settings-gray.png in Resources */,
 				1C3006D817FAE55400DFB81C /* menu-rate-white.png in Resources */,
 				1C2251FB17DCAE72003B19D0 /* Frutiger LT 47 Light Condensed.ttf in Resources */,
@@ -1091,6 +1135,7 @@
 				1C3006D717FAE55400DFB81C /* menu-rate-gray@2x.png in Resources */,
 				1C3FA482184B469B002A9B17 /* about-logo@2x.png in Resources */,
 				1C3006E217FAE55400DFB81C /* menu-timings-gray.png in Resources */,
+				1CDF87B618ECF939007C4BA3 /* menu-ride-remind-gray.png in Resources */,
 				1C9FDA4F17EB00B600DF18ED /* bg@2x.jpg in Resources */,
 				1C45256D17DE25E900FF38FA /* map-marker-red.png in Resources */,
 				1C45256F17DE288B00FF38FA /* map-marker-red-green.png in Resources */,
@@ -1145,6 +1190,7 @@
 				1C3006DF17FAE55400DFB81C /* menu-share-gray@2x.png in Resources */,
 				1C7AAC7F17EE196200C25B59 /* map-annotation-white.png in Resources */,
 				1C19175917E5107000C0B9B4 /* Al Riffa - Bur Dubai.gpx in Resources */,
+				1CDF87B718ECF939007C4BA3 /* menu-ride-remind-gray@2x.png in Resources */,
 				1CD0152D180DA5F300B37D9A /* City Tower 1.gpx in Resources */,
 				1CF0ACFA17E85B6B00953147 /* btn-back.png in Resources */,
 				1CF0ACFB17E85B6B00953147 /* btn-back@2x.png in Resources */,
@@ -1156,9 +1202,11 @@
 				1C7418F31828CD6D006E4D78 /* menu-routes-gray.png in Resources */,
 				1C3006E817FAE55400DFB81C /* menu-train-white.png in Resources */,
 				1CF0AD0817E87A6000953147 /* dashboard-directing@2x.png in Resources */,
+				1CDF87B818ECF939007C4BA3 /* menu-ride-remind-white.png in Resources */,
 				1CF0AD0917E87A6000953147 /* dashboard-off.png in Resources */,
 				1CF0AD0A17E87A6000953147 /* dashboard-off@2x.png in Resources */,
 				1CF0AD0B17E87A6000953147 /* dashboard-unknown.png in Resources */,
+				1CDF87B918ECF939007C4BA3 /* menu-ride-remind-white@2x.png in Resources */,
 				1C3006CE17FAE55400DFB81C /* menu-about-gray.png in Resources */,
 				1CF0AD0C17E87A6000953147 /* dashboard-unknown@2x.png in Resources */,
 				1C8A28C317EA163800C1037B /* btn-ordinary.jpg in Resources */,
@@ -1181,11 +1229,12 @@
 				1C3023C417CBF32E007BA845 /* main.m in Sources */,
 				1C3023C817CBF32E007BA845 /* DubaiMetroAppDelegate.m in Sources */,
 				1CD01530180DD09B00B37D9A /* Settings.m in Sources */,
-				1C3023D417CBF32E007BA845 /* DMViewController.m in Sources */,
+				1C5B361F18FC4F4B0056F2CC /* RideRemindDashboardViewController.m in Sources */,
 				1C1B883B1841D44300092364 /* IntroChildViewController.m in Sources */,
 				1CB36FFD1826504C00A77676 /* MetroStationOrder.m in Sources */,
 				1C9FDA4B17EAFA6C00DF18ED /* MetroStationMapViewController.m in Sources */,
 				1CB1040C184A778200307341 /* JourneyRoutesFooter.m in Sources */,
+				1C5B361618FB32390056F2CC /* RideRemindViewController.m in Sources */,
 				1C458C84181E97FD00F03882 /* JourneyRoutesViewController.m in Sources */,
 				1C3FA477184B398A002A9B17 /* LoadingViewController.m in Sources */,
 				1C5B5EB917F1A0C3007805C2 /* TrainBound+Create.m in Sources */,
@@ -1200,6 +1249,7 @@
 				1C948AA317D66316001935F0 /* UIViewController+PKRevealController.m in Sources */,
 				1C7400281802B40C00F0AF8D /* MetroStationCDTVC.m in Sources */,
 				1CA302921820467C0035882A /* JourneyRoutesCollectionViewCell.m in Sources */,
+				1C88800218E7657000BE91E8 /* DubaiMetro.xcdatamodeld in Sources */,
 				1C948AB117D680C2001935F0 /* DMBarButtonItem.m in Sources */,
 				1C628A3717DC8354007F8E96 /* DMDashboardViewController.m in Sources */,
 				1CB370031826504C00A77676 /* TrainTiming.m in Sources */,
@@ -1208,9 +1258,9 @@
 				1C972C5117F6FC8400591E0D /* TrainTime.m in Sources */,
 				1CFD777F180CB31E0068AB9F /* SettingsTableViewController.m in Sources */,
 				1C1B88451841EA8C00092364 /* IntroViewController.m in Sources */,
+				1CBFF6DA18E0D37500FBB66B /* HomeViewController.m in Sources */,
 				1C4572E017DDB69300DF7B81 /* CoreDataHelper.m in Sources */,
 				1C4572E317DDB71800DF7B81 /* CoreDataTableViewController.m in Sources */,
-				1C4572EA17DDBB8D00DF7B81 /* DubaiMetro.xcdatamodeld in Sources */,
 				1C45731217DDC62300DF7B81 /* MetroStationType+Create.m in Sources */,
 				1C224999182EDF5200EC3AB0 /* TicketPrice+CreateFetch.m in Sources */,
 				1CF3DC3E17FCD90F00560FCE /* MenuCell.m in Sources */,
@@ -1226,10 +1276,12 @@
 				1CB64CC0181D4C980080A56D /* DMDashboardStatusView.m in Sources */,
 				1C19174817E4EA4300C0B9B4 /* MetroStation+CreateFetch.m in Sources */,
 				1C19175E17E5192000C0B9B4 /* MetroStationViewController.m in Sources */,
+				1C307D0018F2400B0093148F /* LoadingOverlay.m in Sources */,
 				1CDC457D17FCC862003E34BB /* MenuViewController.m in Sources */,
 				1CF0ACB117E6F68700953147 /* DMHelper.m in Sources */,
 				1C8A28BC17E9E63000C1037B /* JourneyTableViewController.m in Sources */,
 				1CB36FF11826504B00A77676 /* PeakTime.m in Sources */,
+				1C5B362218FC5B820056F2CC /* DMViewController.m in Sources */,
 				1C10AE81184C6EBF00F29956 /* TrainTimeCellHeader.m in Sources */,
 				1CB36FEC1826334500A77676 /* JourneyRoutesHeader.m in Sources */,
 				1CFD7774180C9E9E0068AB9F /* OpenInChromeController.m in Sources */,
@@ -1339,7 +1391,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/majid/Developer/DubaiMetro/DubaiMetro/GoogleAnalytics_3.0.2,
+					"$(PROJECT_DIR)/DubaiMetro/GoogleAnalytics",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6FCC7A4A-5243-4C4F-BCB0-4C4D28B42FE4";
@@ -1362,7 +1414,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/majid/Developer/DubaiMetro/DubaiMetro/GoogleAnalytics_3.0.2,
+					"$(PROJECT_DIR)/DubaiMetro/GoogleAnalytics",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6FCC7A4A-5243-4C4F-BCB0-4C4D28B42FE4";
@@ -1394,12 +1446,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1C4572E817DDBB8D00DF7B81 /* DubaiMetro.xcdatamodeld */ = {
+		1C88800018E7657000BE91E8 /* DubaiMetro.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1C4572E917DDBB8D00DF7B81 /* DubaiMetro.xcdatamodel */,
+				1C88800118E7657000BE91E8 /* DubaiMetro.xcdatamodel */,
 			);
-			currentVersion = 1C4572E917DDBB8D00DF7B81 /* DubaiMetro.xcdatamodel */;
+			currentVersion = 1C88800118E7657000BE91E8 /* DubaiMetro.xcdatamodel */;
 			path = DubaiMetro.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

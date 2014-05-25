@@ -20,28 +20,28 @@
 {
     [super viewWillAppear:animated];
 
-    int i = self.index + 1;
+    NSInteger i = self.index + 1;
 
     switch (i) {
         case 1:
             self.featureTextLabel.attributedText = [self applyLabelAtrributesForTitle:@"Find."
                                                                              subtitle:@"Nearest Metro Station."];
-            self.featureImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"walkthrough-%d.png",i]];
+            self.featureImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"walkthrough-%d.png",(int)i]];
             break;
         case 2:
             self.featureTextLabel.attributedText = [self applyLabelAtrributesForTitle:@"Calculate."
                                                                              subtitle:@"Routes. Tickect Prices."];
-            self.featureImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"walkthrough-%d.png",i]];
+            self.featureImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"walkthrough-%d.png",(int)i]];
             break;
         case 3:
             self.featureTextLabel.attributedText = [self applyLabelAtrributesForTitle:@"View."
                                                                              subtitle:@"Metro Station Details."];
-            self.featureImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"walkthrough-%d.png",i]];
+            self.featureImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"walkthrough-%d.png",(int)i]];
             break;
         case 4:
             self.featureTextLabel.attributedText = [self applyLabelAtrributesForTitle:@"See."
                                                                              subtitle:@"Train Timings."];
-            self.featureImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"walkthrough-%d.png",i]];
+            self.featureImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"walkthrough-%d.png",(int)i]];
             break;
 
         default:

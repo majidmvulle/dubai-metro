@@ -118,7 +118,7 @@
         for(MetroStationLine *stationLine in self.fromStation.stationLines){
 
             NSArray *metroStationsOnThisLine = [self metroStations:stationLine];
-            int fromIndex = [metroStationsOnThisLine indexOfObject:self.fromStation];
+            NSUInteger fromIndex = [metroStationsOnThisLine indexOfObject:self.fromStation];
 
                 //can get to destination on this line?
             if([self.toStation.stationLines containsObject:stationLine]){
@@ -136,11 +136,11 @@
                 NSMutableArray *toNearestInterchanges = [[self nearestInterchanges:self.toStation onStationLine:stationLine] mutableCopy];
 
                 for(MetroStation *fromNearestInterchangeStation in fromNearestInterchanges){
-                    int fromNearestInterchangeStationIndex = [metroStationsOnThisLine indexOfObject:fromNearestInterchangeStation];
-                    int numberOfStations = 0;
+                    NSUInteger fromNearestInterchangeStationIndex = [metroStationsOnThisLine indexOfObject:fromNearestInterchangeStation];
+                    NSUInteger numberOfStations = 0;
 
-                    int from = fromIndex;
-                    int to = fromNearestInterchangeStationIndex;
+                    NSInteger from = fromIndex;
+                    NSInteger to = fromNearestInterchangeStationIndex;
 
                     if(from > to){
                             //swap the variables
@@ -151,7 +151,7 @@
 
                     BOOL isPassingThroughDestinationStation = NO;
 
-                    for(int i = from; i < to; i++){
+                    for(NSInteger i = from; i < to; i++){
                         numberOfStations++;
                             //if we are not passing thru destination
                         if([metroStationsOnThisLine[i] isEqual:self.toStation]){
@@ -182,7 +182,7 @@
 
                                         for(MetroStationLine *toStationLine in toStationLines){
 
-                                            int aNumber = [self numberOfStationFromInterchange:fromNearestInterchangeStation
+                                            NSUInteger aNumber = [self numberOfStationFromInterchange:fromNearestInterchangeStation
                                                                                  toInterchange:anInterchange onStationLine:aStationLine];
                                             if(aNumber != NSNotFound){
                                                 numberOfStations += aNumber;
@@ -262,13 +262,28 @@
 
 
         NSLog(@"To: %@", jr.toStation.stationName);
-        NSLog(@"Number of Stops: %d", jr.numberOfStationsToTravel);
+        NSLog(@"Number of Stops: %ld", (long)jr.numberOfStationsToTravel);
         NSLog(@"Zones: %@", jr.stationZoneNumbers);
         
         routeNumber++;
     }
 #endif
 
+    self.journeyRoutes = [[self.journeyRoutes sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
+
+        if([obj1 isKindOfClass:[JourneyRoute class]] && [obj2 isKindOfClass:[JourneyRoute class]]){
+
+            NSInteger obj1NumberOfStationsToTravel = ((JourneyRoute *)obj1).numberOfStationsToTravel;
+            NSInteger obj2NumberOfStationsToTravel = ((JourneyRoute *)obj2).numberOfStationsToTravel;
+
+            NSInteger obj1NumberOfInterchanges = [((JourneyRoute*)obj1).interchanges count];
+            NSInteger obj2NumberOfInterchanges = [((JourneyRoute*)obj2).interchanges count];
+
+            return (obj1NumberOfStationsToTravel > obj2NumberOfStationsToTravel || obj1NumberOfInterchanges > obj2NumberOfInterchanges);
+        }else
+            return obj1 == obj2;
+        
+    }] mutableCopy];
 
         //wrap in arrays for sections in cells
     NSMutableArray *theJourneyRoutes = [NSMutableArray array];
@@ -297,8 +312,8 @@
 
     JourneyRoute *route = [[JourneyRoute alloc] init];
     NSArray *metroStationsOnThisLine = [self metroStations:stationLine];
-    int fromIndex = [metroStationsOnThisLine indexOfObject:fromStation];
-    int toIndex = [metroStationsOnThisLine indexOfObject:toStation];
+    NSInteger fromIndex = [metroStationsOnThisLine indexOfObject:fromStation];
+    NSInteger toIndex = [metroStationsOnThisLine indexOfObject:toStation];
 
     if(fromIndex > toIndex){
             //swap the variables
@@ -307,15 +322,16 @@
         fromIndex = fromIndex - toIndex;
     }
 
-    int numberOfStations = toIndex - fromIndex;
+    NSInteger numberOfStations = toIndex - fromIndex;
+
 
     route.fromStation = fromStation;
     route.toStation = toStation;
     route.towardsStation = [self towardsStationFrom:fromStation toStation:toStation onSameStationLine:stationLine];
-    route.numberOfStationsToTravel = numberOfStations ? (numberOfStations - 1) : numberOfStations;
+    route.numberOfStationsToTravel = (numberOfStations ? ((int)numberOfStations - 1) : numberOfStations);
 
         //Populate visited interchanges
-    for(int i = fromIndex; i <= toIndex; i++){
+    for(NSInteger i = fromIndex; i <= toIndex; i++){
         [route.stationZoneNumbers addObject:((MetroStation *)metroStationsOnThisLine[i]).stationZone];
 
         if([self isMetroStationAnInterchange:metroStationsOnThisLine[i]]){
@@ -355,8 +371,8 @@
         [route.interchanges addObject:intchange];
 
         NSArray *metroStationsOnThisLine = [self metroStations:[self.toStation.stationLines anyObject]];
-        int fromIndex = [metroStationsOnThisLine indexOfObject:interchangeStation];
-        int toIndex = [metroStationsOnThisLine indexOfObject:toStation];
+        NSUInteger fromIndex = [metroStationsOnThisLine indexOfObject:interchangeStation];
+        NSUInteger toIndex = [metroStationsOnThisLine indexOfObject:toStation];
 
         if(fromIndex > toIndex){
                 //swap the variables
@@ -365,7 +381,7 @@
             fromIndex = fromIndex - toIndex;
         }
 
-        int numberOfStations = toIndex - fromIndex;
+        NSInteger numberOfStations = toIndex - fromIndex;
         route.numberOfStationsToTravel += numberOfStations;
 
         [route.stationZoneNumbers addObject:interchangeStation.stationZone];
@@ -387,14 +403,16 @@
         NSArray *interchanges = [self interchangesOnStationLine:stationLine];
         NSArray *metroStationsOnThisLines = [self metroStations:stationLine];
 
-        int stationIndex = [metroStationsOnThisLines indexOfObject:metroStation];
-        int nearestInterchangeIndex = NSNotFound;
+        NSUInteger stationIndex = [metroStationsOnThisLines indexOfObject:metroStation];
+        NSUInteger nearestInterchangeIndex = NSNotFound;
+
+
 
         for(MetroStation *interchangeStation in interchanges){
 
-            int interchangeIndex = [metroStationsOnThisLines indexOfObject:interchangeStation];
+            NSUInteger interchangeIndex = [metroStationsOnThisLines indexOfObject:interchangeStation];
 
-            if((nearestInterchangeIndex == NSNotFound) || abs(interchangeIndex - stationIndex) <= abs(nearestInterchangeIndex - stationIndex)) {
+            if((nearestInterchangeIndex == NSNotFound) || abs((int)interchangeIndex - (int)stationIndex) <= abs((int)nearestInterchangeIndex - (int)stationIndex)) {
                 nearestInterchangeIndex = interchangeIndex;
             }
 
@@ -410,9 +428,9 @@
 
                 [tempNearestInterchanges enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop){
 
-                    int aStationIndex = [metroStationsOnThisLines indexOfObject:(MetroStation *)obj];
+                    NSUInteger aStationIndex = [metroStationsOnThisLines indexOfObject:(MetroStation *)obj];
 
-                    if(abs(interchangeIndex - stationIndex) < abs(aStationIndex - stationIndex)){
+                    if(abs((int)interchangeIndex - (int)stationIndex) < abs((int)aStationIndex - (int)stationIndex)){
                         [nearestInterchanges removeObject:(MetroStation *)obj];
                     }
 
@@ -448,8 +466,8 @@
 
         NSArray *metroStationForLine = [self metroStations:stationLine];
 
-        int fromIndex = [metroStationForLine indexOfObject:fromStation];
-        int toIndex = [metroStationForLine indexOfObject:toStation];
+        NSUInteger fromIndex = [metroStationForLine indexOfObject:fromStation];
+        NSUInteger toIndex = [metroStationForLine indexOfObject:toStation];
 
         if(toIndex > fromIndex){
             towardsStation = [metroStationForLine lastObject];
@@ -477,14 +495,14 @@
     return NO;
 }
 
-- (int)numberOfStationFromInterchange:(MetroStation *)fromInterchange
+- (NSInteger)numberOfStationFromInterchange:(MetroStation *)fromInterchange
                         toInterchange:(MetroStation *)toInterchange
                         onStationLine:(MetroStationLine *)stationLine
 {
-    int numberOfStations = -1;
+    NSInteger numberOfStations = -1;
 
-    int fromIndex = [[self metroStations:stationLine] indexOfObject:fromInterchange];
-    int toIndex = [[self metroStations:stationLine] indexOfObject:toInterchange];
+    NSUInteger fromIndex = [[self metroStations:stationLine] indexOfObject:fromInterchange];
+    NSUInteger toIndex = [[self metroStations:stationLine] indexOfObject:toInterchange];
 
     if(fromIndex > toIndex){
             //swap the variables

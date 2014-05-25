@@ -9,8 +9,9 @@
 #import "DefaultNavigationController.h"
 #import "DMBarButtonItem.h"
 #import "IntroViewController.h"
-#import "DMViewController.h"
+#import "HomeViewController.h"
 #import "LoadingViewController.h"
+#import "LoadingOverlay.h"
 
 @interface DefaultNavigationController()
 @property (nonatomic, strong) LoadingViewController *loadingViewController;
@@ -52,7 +53,7 @@
         UIViewController *rootViewController = [viewControllers firstObject];
         [self addMenuButton:rootViewController];
 
-        if([rootViewController isKindOfClass:[DMViewController class]]){
+        if([rootViewController isKindOfClass:[HomeViewController class]]){
             [self addHelpButton:rootViewController];
         }
     }
@@ -66,7 +67,7 @@
         UIViewController *rootViewController = [viewControllers firstObject];
         [self addMenuButton:rootViewController];
 
-        if([rootViewController isKindOfClass:[DMViewController class]]){
+        if([rootViewController isKindOfClass:[HomeViewController class]]){
             [self addHelpButton:rootViewController];
         }
     }
@@ -210,6 +211,14 @@
     self.revealController = [PKRevealController revealControllerWithFrontViewController:self
                                                                      leftViewController:self.menuViewController
                                                                                 options:options];
+
+}
+
+- (void)wantsToUpdate
+{
+    if(![self.viewControllers containsObject:self.loadingViewController]){
+        [self showLoading];
+    }
 
 }
 

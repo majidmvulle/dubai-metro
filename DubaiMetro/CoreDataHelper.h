@@ -18,4 +18,6 @@ typedef void (^OnDocumentReady) (UIManagedDocument *document);
 + (CoreDataHelper *)sharedManagedDocument;
 - (void)openManagedDocumentUsingBlock:(void (^)(BOOL success))block;
 - (void)performWithDocument:(OnDocumentReady)onDocumentReady;
++ (NSURL *)documentDirectoryURL;
+
 @end

@@ -254,7 +254,7 @@
     NSInteger hour = [components hour];
     NSInteger minute = [components minute];
 
-    NSString *timeString = [NSString stringWithFormat:@"%d:%d", hour, minute];
+    NSString *timeString = [NSString stringWithFormat:@"%d:%d", (int)hour, (int)minute];
 
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
     [timeFormatter setDateFormat:@"HH:mm"];

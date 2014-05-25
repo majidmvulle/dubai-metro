@@ -8,7 +8,7 @@
 
 #import "MapViewController.h"
 #import "MetroStation.h"
-#import "DMViewController.h"
+#import "HomeViewController.h"
 #import "MetroStationLine.h"
 
 #pragma mark - GreenPolyline
@@ -127,17 +127,15 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    if([self.parentViewController isKindOfClass:[DMViewController class]]){
+    if([self.parentViewController isKindOfClass:[HomeViewController class]]){
         @try {
             if([view.annotation isKindOfClass:[MetroStation class]]){
                 MetroStation *station = view.annotation;
-                [(DMViewController *)self.parentViewController setupMetroStation:station];
+                [(HomeViewController *)self.parentViewController setupMetroStation:station];
             }
         }
         @catch (NSException *exception) {
-#ifdef DM_DEBUG
             NSLog(@"Couldn't segue: %@", exception);
-#endif
         }
     }
 }

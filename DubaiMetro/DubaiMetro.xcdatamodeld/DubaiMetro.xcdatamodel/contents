@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3400" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="1.0" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="MetroStation" representedClassName="MetroStation" syncable="YES">
         <attribute name="isStationOperational" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="stationAttractions" optional="YES" attributeType="String" syncable="YES"/>
@@ -68,8 +68,8 @@
         <element name="MetroStationOrder" positionX="-2243" positionY="594" width="128" height="88"/>
         <element name="MetroStationType" positionX="-1802" positionY="411" width="128" height="75"/>
         <element name="PeakTime" positionX="-2322" positionY="153" width="128" height="135"/>
+        <element name="TicketPrice" positionX="-2151" positionY="-4" width="128" height="103"/>
         <element name="TrainBound" positionX="-1737" positionY="162" width="128" height="90"/>
         <element name="TrainTiming" positionX="-1559" positionY="36" width="128" height="180"/>
-        <element name="TicketPrice" positionX="-2151" positionY="-4" width="128" height="103"/>
     </elements>
 </model>

@@ -18,7 +18,7 @@
 
 #pragma mark - JourneyRoute declaration
 @interface JourneyRoute : NSObject
-@property (nonatomic) int numberOfStationsToTravel;
+@property (nonatomic) NSInteger numberOfStationsToTravel;
 @property (nonatomic, strong) MetroStation *fromStation;
 @property (nonatomic, strong) MetroStation *toStation;
 @property (nonatomic, strong) MetroStation *towardsStation;

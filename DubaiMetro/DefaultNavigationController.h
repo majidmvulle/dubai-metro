@@ -14,4 +14,5 @@
 @property (nonatomic, strong) MenuViewController *menuViewController;
 @property (nonatomic, getter = isFirstTimeSetupComplete) BOOL firstTimeSetupComplete;
 - (void)showMenu;
+- (void)wantsToUpdate;
 @end

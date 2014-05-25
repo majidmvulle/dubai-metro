@@ -118,7 +118,7 @@
 {
     NSString *name =  [self.metroStation.stationName capitalizedString];
 
-    self.title = name;
+    self.title = [name uppercaseString];
 
     NSMutableArray *lines = [NSMutableArray array];
 
@@ -164,18 +164,6 @@
             ((UITextView *)subview).font = [DMHelper dmFontWithSize:((UITextView *)subview).font.pointSize];
         }
     }
-
-    /*
-    for(id subview in self.scrollView.subviews){
-        if([subview isKindOfClass:[UILabel class]]){
-            ((UILabel *)subview).font = [DMHelper dmFontWithSize:((UILabel *)subview).font.pointSize];
-        }else if([subview isKindOfClass:[UIButton class]]){
-            ((UIButton *)subview).titleLabel.font = [DMHelper dmFontWithSize:((UIButton *)subview).titleLabel.font.pointSize];
-        }else if([subview isKindOfClass:[UITextView class]]){
-            ((UITextView *)subview).font = [DMHelper dmFontWithSize:((UITextView *)subview).font.pointSize];
-        }
-    }
-     */
 }
 
 - (NSString *)getProximityText

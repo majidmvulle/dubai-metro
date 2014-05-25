@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3rw-EW-hLe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3rw-EW-hLe">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Journey Table View Controller - Start Your Journey-->
@@ -124,8 +124,8 @@
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="0.0" id="ez8-1L-AOV">
                                     <size key="itemSize" width="285" height="178"/>
                                     <size key="headerReferenceSize" width="285" height="44"/>
-                                    <size key="footerReferenceSize" width="285" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                                    <size key="footerReferenceSize" width="286" height="44"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" placeholderIntrinsicWidth="285" placeholderIntrinsicHeight="200" reuseIdentifier="RouteCell" id="jar-dX-78g" customClass="JourneyRoutesCollectionViewCell">
@@ -337,8 +337,22 @@
                                         <outlet property="routeSummaryLabel" destination="QtH-R4-KiR" id="tfO-Eh-51g"/>
                                     </connections>
                                 </collectionReusableView>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RouteFooter" id="3Ub-Ue-dNx" customClass="JourneyRoutesFooter">
+                                <collectionReusableView key="sectionFooterView" hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RouteFooter" id="3Ub-Ue-dNx" customClass="JourneyRoutesFooter">
+                                    <rect key="frame" x="0.0" y="286" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIz-Nm-fNt">
+                                            <rect key="frame" x="17" y="0.0" width="286" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                            <state key="normal" title="START JOURNEY" backgroundImage="btn-blue.jpg">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="footerButtonTapped:" destination="61e-Id-yYK" eventType="touchUpInside" id="Tjr-LF-mQk"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="61e-Id-yYK" id="rGP-r2-1zm"/>
@@ -374,11 +388,139 @@
                         <outlet property="calculatingRouteLabel" destination="Xa6-1C-iq5" id="E2J-ZW-Jam"/>
                         <outlet property="journeyRoutesCollectionView" destination="Qrl-OM-KRz" id="qOB-4P-aem"/>
                         <outlet property="spinner" destination="kDD-AK-5lN" id="IVz-cQ-68G"/>
+                        <segue destination="x4n-kE-WPq" kind="modal" identifier="setJourneyRoute:" id="ARn-R1-q2s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m0F-1e-gma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688" y="-689"/>
+        </scene>
+        <!--Ride Remind View Controller - Ride & Remind-->
+        <scene sceneID="Gbn-sW-yh2">
+            <objects>
+                <viewController id="vLw-Xc-BiT" customClass="RideRemindViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qbe-bT-xwF"/>
+                        <viewControllerLayoutGuide type="bottom" id="HbT-Gx-Qbn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n99-Tw-wJ7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrS-9h-L85">
+                                <rect key="frame" x="0.0" y="277" width="320" height="203"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="y23-T3-ETG" kind="embed" identifier="Embed Map View" id="fFI-8N-6e3"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFS-l9-Mez">
+                                <rect key="frame" x="0.0" y="64" width="320" height="205"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="4L2-TQ-bnT" kind="embed" identifier="Embed Dashboard" id="glH-2l-YJZ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.090196078430000007" green="0.1176470588" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yFS-l9-Mez" secondAttribute="trailing" id="2NE-RY-i8i"/>
+                            <constraint firstItem="mrS-9h-L85" firstAttribute="top" secondItem="qbe-bT-xwF" secondAttribute="bottom" constant="213" id="App-nZ-Pag"/>
+                            <constraint firstItem="mrS-9h-L85" firstAttribute="top" secondItem="yFS-l9-Mez" secondAttribute="bottom" constant="8" symbolic="YES" id="MTK-69-xCT"/>
+                            <constraint firstItem="yFS-l9-Mez" firstAttribute="leading" secondItem="mrS-9h-L85" secondAttribute="leading" id="Sr4-lM-Up3"/>
+                            <constraint firstItem="yFS-l9-Mez" firstAttribute="leading" secondItem="n99-Tw-wJ7" secondAttribute="leading" id="eXr-hS-6v2"/>
+                            <constraint firstItem="HbT-Gx-Qbn" firstAttribute="top" secondItem="mrS-9h-L85" secondAttribute="bottom" id="jdC-Uh-90A"/>
+                            <constraint firstItem="yFS-l9-Mez" firstAttribute="top" secondItem="qbe-bT-xwF" secondAttribute="bottom" id="kvy-hw-ffx"/>
+                            <constraint firstItem="yFS-l9-Mez" firstAttribute="trailing" secondItem="mrS-9h-L85" secondAttribute="trailing" id="wJO-ms-TMu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ride &amp; Remind" id="PzM-FW-c9j"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="it1-aE-7qk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2594" y="-610"/>
+        </scene>
+        <!--Ride Remind Dashboard View Controller-->
+        <scene sceneID="l9i-oZ-giN">
+            <objects>
+                <viewController id="4L2-TQ-bnT" customClass="RideRemindDashboardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fBE-Ju-sVA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bx0-US-TaC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3VE-qJ-q6Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="205"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bT-kn-Kht">
+                                <rect key="frame" x="20" y="8" width="280" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="100"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbs-Tw-Gpd">
+                                <rect key="frame" x="20" y="116" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4p1-bc-BT6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="WPL-cI-gTW">
+                                <rect key="frame" x="20" y="145" width="280" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="mMU-dp-xUs"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Approaching
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Ibn Batuta">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.090196078430000007" green="0.1176470588" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4bT-kn-Kht" firstAttribute="trailing" secondItem="Tbs-Tw-Gpd" secondAttribute="trailing" id="9iP-s5-iZC"/>
+                            <constraint firstItem="Tbs-Tw-Gpd" firstAttribute="top" secondItem="4bT-kn-Kht" secondAttribute="bottom" constant="8" symbolic="YES" id="G7B-NB-PX9"/>
+                            <constraint firstItem="WPL-cI-gTW" firstAttribute="leading" secondItem="Tbs-Tw-Gpd" secondAttribute="leading" id="Q4w-7G-pWO"/>
+                            <constraint firstItem="WPL-cI-gTW" firstAttribute="top" secondItem="Tbs-Tw-Gpd" secondAttribute="bottom" constant="8" symbolic="YES" id="Qq5-81-RWV"/>
+                            <constraint firstItem="4bT-kn-Kht" firstAttribute="top" secondItem="fBE-Ju-sVA" secondAttribute="bottom" constant="8" id="RLZ-d2-HwK"/>
+                            <constraint firstItem="Bx0-US-TaC" firstAttribute="top" secondItem="WPL-cI-gTW" secondAttribute="bottom" constant="8" id="Sfv-4O-7VU"/>
+                            <constraint firstItem="WPL-cI-gTW" firstAttribute="trailing" secondItem="Tbs-Tw-Gpd" secondAttribute="trailing" id="czn-dP-lCI"/>
+                            <constraint firstItem="4bT-kn-Kht" firstAttribute="leading" secondItem="3VE-qJ-q6Q" secondAttribute="leading" constant="20" symbolic="YES" id="ffA-f4-8oE"/>
+                            <constraint firstAttribute="trailing" secondItem="4bT-kn-Kht" secondAttribute="trailing" constant="20" symbolic="YES" id="flg-YX-QEJ"/>
+                            <constraint firstItem="Tbs-Tw-Gpd" firstAttribute="leading" secondItem="4bT-kn-Kht" secondAttribute="leading" id="ziL-Hb-RJE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="speedLabel" destination="4bT-kn-Kht" id="Vzt-5P-FIB"/>
+                        <outlet property="speedUnitLabel" destination="Tbs-Tw-Gpd" id="Kfz-RD-ZO3"/>
+                        <outlet property="statusLabel" destination="WPL-cI-gTW" id="bcR-Xr-fEo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9y-S8-Ty2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2594" y="-913"/>
         </scene>
         <!--Metro StationCDTVC - Metro Stations-->
         <scene sceneID="gSG-du-i5U">
@@ -921,7 +1063,7 @@
                                     <segue destination="Ql6-S7-pas" kind="push" identifier="privacypolicy" id="9nr-YE-UTN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkl-rt-Gg2">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 1.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkl-rt-Gg2">
                                 <rect key="frame" x="20" y="164" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -938,7 +1080,7 @@
                                     <constraint firstAttribute="height" constant="21" id="Kja-ib-eFd"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="© 2013. Majid Mvulle. All Rights Reserved.">
+                                    <fragment content="© 2014. Majid Mvulle. All Rights Reserved.">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="12" name="HelveticaNeue"/>
@@ -959,14 +1101,45 @@
                                     <action selector="appURLTapped:" destination="fMc-ur-Lf2" eventType="touchUpInside" id="pvU-e0-8N2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXb-hZ-Rem">
+                                <rect key="frame" x="20" y="365" width="115" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="qBc-hX-RQM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Share App" backgroundImage="btn-blue.jpg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doShareApp:" destination="fMc-ur-Lf2" eventType="touchUpInside" id="A4U-S5-XmV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6c-0i-PQ4">
+                                <rect key="frame" x="185" y="364" width="115" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ta7-wj-mLX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Feedback" backgroundImage="btn-blue.jpg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doFeedback:" destination="fMc-ur-Lf2" eventType="touchUpInside" id="dVN-Gx-itq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.090196078430000007" green="0.1176470588" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jN1-EU-CkP" firstAttribute="centerX" secondItem="2v6-mG-WEh" secondAttribute="centerX" id="0Mm-lo-cCf"/>
                             <constraint firstAttribute="trailing" secondItem="Xz3-Rb-tne" secondAttribute="trailing" constant="20" symbolic="YES" id="0gA-C2-Jge"/>
                             <constraint firstItem="Jkl-rt-Gg2" firstAttribute="leading" secondItem="CsC-Mq-bLO" secondAttribute="leading" id="0nz-Mk-B36"/>
+                            <constraint firstItem="J6c-0i-PQ4" firstAttribute="leading" secondItem="Xz3-Rb-tne" secondAttribute="leading" id="6xb-VO-V0u"/>
                             <constraint firstItem="2v6-mG-WEh" firstAttribute="top" secondItem="Jkl-rt-Gg2" secondAttribute="bottom" constant="8" symbolic="YES" id="8AF-WP-2ql"/>
                             <constraint firstItem="Xz3-Rb-tne" firstAttribute="leading" secondItem="CsC-Mq-bLO" secondAttribute="trailing" constant="50" id="AhZ-5h-gVF"/>
+                            <constraint firstItem="pXb-hZ-Rem" firstAttribute="leading" secondItem="CsC-Mq-bLO" secondAttribute="leading" id="Dj6-z6-au1"/>
+                            <constraint firstItem="pXb-hZ-Rem" firstAttribute="trailing" secondItem="CsC-Mq-bLO" secondAttribute="trailing" id="ESO-7A-X8I"/>
                             <constraint firstItem="Jkl-rt-Gg2" firstAttribute="trailing" secondItem="Xz3-Rb-tne" secondAttribute="trailing" id="I50-dk-7W4"/>
                             <constraint firstItem="CsC-Mq-bLO" firstAttribute="leading" secondItem="Uzh-KQ-WcW" secondAttribute="leading" constant="20" symbolic="YES" id="Iaa-GR-Ilb"/>
                             <constraint firstItem="Jkl-rt-Gg2" firstAttribute="top" secondItem="YKN-86-dyu" secondAttribute="bottom" constant="8" symbolic="YES" id="M62-OV-BUj"/>
@@ -977,7 +1150,10 @@
                             <constraint firstItem="CsC-Mq-bLO" firstAttribute="top" secondItem="Xz3-Rb-tne" secondAttribute="top" id="UTS-Yp-h0h"/>
                             <constraint firstAttribute="bottom" secondItem="Xz3-Rb-tne" secondAttribute="bottom" constant="20" symbolic="YES" id="W0v-sN-sVR"/>
                             <constraint firstItem="2v6-mG-WEh" firstAttribute="leading" secondItem="Jkl-rt-Gg2" secondAttribute="leading" id="YFt-4T-EKm"/>
+                            <constraint firstItem="Xz3-Rb-tne" firstAttribute="top" secondItem="J6c-0i-PQ4" secondAttribute="bottom" constant="8" symbolic="YES" id="fF8-2M-eVM"/>
                             <constraint firstItem="2v6-mG-WEh" firstAttribute="trailing" secondItem="Jkl-rt-Gg2" secondAttribute="trailing" id="iVX-4K-jSV"/>
+                            <constraint firstItem="CsC-Mq-bLO" firstAttribute="top" secondItem="pXb-hZ-Rem" secondAttribute="bottom" constant="7" id="qqp-Ee-eGF"/>
+                            <constraint firstItem="J6c-0i-PQ4" firstAttribute="trailing" secondItem="Xz3-Rb-tne" secondAttribute="trailing" id="zbS-hs-Oky"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -1181,10 +1357,10 @@ You may disable usage tracking in the "Settings".</string>
             </objects>
             <point key="canvasLocation" x="834" y="1574"/>
         </scene>
-        <!--View Controller - DubaiMetro-->
+        <!--Home View Controller - DubaiMetro-->
         <scene sceneID="5">
             <objects>
-                <viewController storyboardIdentifier="DMViewController" id="2" customClass="DMViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DMViewController" id="2" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="im1-nk-cla"/>
                         <viewControllerLayoutGuide type="bottom" id="TRH-Ka-yyN"/>
@@ -1223,9 +1399,8 @@ You may disable usage tracking in the "Settings".</string>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="DubaiMetro" id="PHT-gy-xaz"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="dashboardContainer" destination="U9M-Sy-Xt8" id="bSi-cm-oTF"/>
-                        <outlet property="mapViewContainer" destination="Vq4-2L-gsW" id="jIQ-sh-0O7"/>
                         <segue destination="EtO-Vk-Ply" kind="push" identifier="viewMetroStationDetails" id="ewv-mV-JbA"/>
                         <segue destination="7IU-hg-m5u" kind="modal" identifier="setupStartJourney" id="9zd-tP-K34"/>
                         <segue destination="2Mk-up-pE0" kind="push" identifier="viewMetroStationTrainTimings" id="cjB-pW-X2v"/>
@@ -1280,6 +1455,7 @@ You may disable usage tracking in the "Settings".</string>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="135"/>
                     <connections>
                         <outlet property="mapView" destination="Y9Q-6R-cGA" id="0oZ-fg-C4V"/>
                     </connections>
@@ -1297,11 +1473,11 @@ You may disable usage tracking in the "Settings".</string>
                         <viewControllerLayoutGuide type="bottom" id="YOY-Mt-znd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="K9X-1I-e62">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jRr-2y-Ocg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.090196078430000007" green="0.1176470588" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fAA-Pa-1TU">
@@ -1417,7 +1593,7 @@ You may disable usage tracking in the "Settings".</string>
                                 </connections>
                             </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FxU-74-p55">
-                                <rect key="frame" x="142" y="222" width="37" height="37"/>
+                                <rect key="frame" x="142" y="266" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
@@ -1432,6 +1608,7 @@ You may disable usage tracking in the "Settings".</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r7T-93-G4U"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="spinner" destination="FxU-74-p55" id="FXx-0L-h2d"/>
                         <outlet property="trainTimeCollectionView" destination="jRr-2y-Ocg" id="NDA-tX-AhP"/>
@@ -1523,6 +1700,7 @@ You may disable usage tracking in the "Settings".</string>
                             <constraint firstAttribute="bottom" secondItem="2Ov-dG-xBQ" secondAttribute="bottom" constant="-20" id="qoN-Fw-rB5"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="containerView" destination="2Ov-dG-xBQ" id="Vvo-tj-Bng"/>
                         <outlet property="topToolBar" destination="frj-8M-c9E" id="rGd-GI-5lD"/>
@@ -1628,8 +1806,29 @@ You may disable usage tracking in the "Settings".</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settings" textLabel="75p-GG-JBP" imageView="yVx-K0-y6F" style="IBUITableViewCellStyleDefault" id="HTv-Kv-bq3" customClass="MenuCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rate" textLabel="DAp-wF-Snd" imageView="2Gz-3L-aaS" style="IBUITableViewCellStyleDefault" id="8sk-av-On2" customClass="MenuCell">
                                         <rect key="frame" x="0.0" y="176" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8sk-av-On2" id="JFO-aW-olW">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Rate This App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DAp-wF-Snd">
+                                                    <rect key="frame" x="50" y="0.0" width="255" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="menu-rate-gray.png" id="2Gz-3L-aaS">
+                                                    <rect key="frame" x="15" y="12" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settings" textLabel="75p-GG-JBP" imageView="yVx-K0-y6F" style="IBUITableViewCellStyleDefault" id="HTv-Kv-bq3" customClass="MenuCell">
+                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HTv-Kv-bq3" id="md8-z4-Qka">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1643,27 +1842,6 @@ You may disable usage tracking in the "Settings".</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="menu-settings-gray.png" id="yVx-K0-y6F">
-                                                    <rect key="frame" x="15" y="12" width="20" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedback" textLabel="Zf2-hS-eNf" imageView="gLB-Gh-rEP" style="IBUITableViewCellStyleDefault" id="ZA7-7R-PS2" customClass="MenuCell">
-                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZA7-7R-PS2" id="NIp-L1-mzS">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zf2-hS-eNf">
-                                                    <rect key="frame" x="50" y="0.0" width="255" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="menu-feedback-gray.png" id="gLB-Gh-rEP">
                                                     <rect key="frame" x="15" y="12" width="20" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -1784,6 +1962,8 @@ You may disable usage tracking in the "Settings".</string>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="205"/>
                     <connections>
                         <outlet property="startJourneyButton" destination="C2q-dn-iaj" id="Gm7-Tl-7Ds"/>
                         <outlet property="statusDescription" destination="4GC-iN-8hY" id="nbF-ej-6T9"/>
@@ -1815,6 +1995,67 @@ You may disable usage tracking in the "Settings".</string>
             </objects>
             <point key="canvasLocation" x="709" y="-689"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nNY-lO-kI0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x4n-kE-WPq" customClass="DMNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uol-iD-RFB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vLw-Xc-BiT" kind="relationship" relationship="rootViewController" id="JJs-Fb-y53"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tBl-Nx-2OO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2082" y="-689"/>
+        </scene>
+        <!--All Metro Stations Map View Controller-->
+        <scene sceneID="gcF-le-MyN">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="y23-T3-ETG" customClass="AllMetroStationsMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Nl-Mc-BcM"/>
+                        <viewControllerLayoutGuide type="bottom" id="IX8-9e-20g"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YSo-c9-wDd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="203"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YmK-HK-dcC">
+                                <rect key="frame" x="0.0" y="159" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items/>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGv-U8-2Rt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LGv-U8-2Rt" firstAttribute="trailing" secondItem="YmK-HK-dcC" secondAttribute="trailing" id="0mT-xc-rrm"/>
+                            <constraint firstItem="YmK-HK-dcC" firstAttribute="leading" secondItem="LGv-U8-2Rt" secondAttribute="leading" id="FR8-XI-tL6"/>
+                            <constraint firstAttribute="trailing" secondItem="YmK-HK-dcC" secondAttribute="trailing" id="X4g-Bi-g3h"/>
+                            <constraint firstItem="LGv-U8-2Rt" firstAttribute="leading" secondItem="YSo-c9-wDd" secondAttribute="leading" id="YUz-Rr-JGY"/>
+                            <constraint firstItem="IX8-9e-20g" firstAttribute="top" secondItem="YmK-HK-dcC" secondAttribute="bottom" id="vly-xW-o7S"/>
+                            <constraint firstItem="YmK-HK-dcC" firstAttribute="top" secondItem="LGv-U8-2Rt" secondAttribute="bottom" id="wJ5-Py-1ME"/>
+                            <constraint firstItem="LGv-U8-2Rt" firstAttribute="top" secondItem="YSo-c9-wDd" secondAttribute="top" id="zl0-sD-Uyc"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="aToolBar" destination="YmK-HK-dcC" id="d8l-gp-o5F"/>
+                        <outlet property="mapView" destination="LGv-U8-2Rt" id="rYe-id-IaU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ho-id-Srb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2594" y="-29"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about-logo.png" width="197" height="291"/>
@@ -1824,7 +2065,7 @@ You may disable usage tracking in the "Settings".</string>
         <image name="map-annotation-white.png" width="30" height="30"/>
         <image name="menu-about-gray.png" width="20" height="20"/>
         <image name="menu-dashboard-gray.png" width="20" height="20"/>
-        <image name="menu-feedback-gray.png" width="20" height="20"/>
+        <image name="menu-rate-gray.png" width="20" height="20"/>
         <image name="menu-routes-gray.png" width="20" height="20"/>
         <image name="menu-settings-gray.png" width="20" height="20"/>
         <image name="menu-timings-gray.png" width="20" height="20"/>

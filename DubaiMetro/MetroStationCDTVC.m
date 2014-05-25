@@ -38,7 +38,7 @@ UIActionSheetDelegate, DMLocationManagerDelegate, UISearchBarDelegate>
 {
     [super viewDidLoad];
 
-    const float colorMask[6] = {222, 255, 222, 255, 222, 255};
+    const CGFloat colorMask[6] = {222, 255, 222, 255, 222, 255};
     CGImageRef imageRef = CGImageCreateWithMaskingColors([[UIImage alloc] init].CGImage, colorMask);
     UIImage *image = [UIImage imageWithCGImage:imageRef];
 

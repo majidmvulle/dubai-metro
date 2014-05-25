@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
 
-    self.title = [self.metroStation.stationName stringByAppendingString:@" Train Timings"];
+    self.title = [[self.metroStation.stationName uppercaseString] stringByAppendingString:@" Train Timings"];
     
     if(!self.trainTime.boundStations && self.metroStation) [self setupTrainTime];
 

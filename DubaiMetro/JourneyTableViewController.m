@@ -131,13 +131,13 @@
 - (void)setFromStation:(MetroStation *)fromStation
 {
     _fromStation = fromStation;
-    self.fromStationCell.detailTextLabel.text = _fromStation.stationName;
+    self.fromStationCell.detailTextLabel.text = [_fromStation.stationName uppercaseString];
 }
 
 - (void)setToStation:(MetroStation *)toStation
 {
     _toStation = toStation;
-    self.toStationCell.detailTextLabel.text = _toStation.stationName;
+    self.toStationCell.detailTextLabel.text = [_toStation.stationName uppercaseString];
 }
 
 - (IBAction)cancel:(UIBarButtonItem *)sender

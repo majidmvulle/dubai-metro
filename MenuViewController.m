@@ -7,16 +7,24 @@
 //
 
 #import <MessageUI/MessageUI.h>
+#import <StoreKit/StoreKit.h>
+
 #import "MenuViewController.h"
 #import "DefaultNavigationController.h"
 #import "MetroStationCDTVC.h"
 #import "CoreDataHelper.h"
 #import "MenuCell.h"
-#import "DMViewController.h"
+#import "HomeViewController.h"
 #import "DMBarButtonItem.h"
 #import "JourneyTableViewController.h"
 
-@interface MenuViewController () <UITableViewDelegate, MFMailComposeViewControllerDelegate>
+#import "LoadingOverlay.h"
+
+@interface MenuViewController () <UITableViewDelegate,
+                                MFMailComposeViewControllerDelegate,
+                                SKStoreProductViewControllerDelegate,
+                                UIActionSheetDelegate,
+                                UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIToolbar *topToolBar;
 @property (nonatomic, strong) NSMutableDictionary *menuViewControllers;
 @end
@@ -53,7 +61,7 @@
 {
     self.topToolBar.translucent = NO; //iOS 7 sets it to YES by default
 
-    const float colorMask[6] = {23, 255, 30, 255, 49, 255};
+    const CGFloat colorMask[6] = {23, 255, 30, 255, 49, 255};
     CGImageRef imageRef = CGImageCreateWithMaskingColors([[UIImage alloc] init].CGImage, colorMask);
     UIImage *maskedImage = [UIImage imageWithCGImage:imageRef];
 
@@ -86,12 +94,14 @@
 
         NSString *reuseId = cell.reuseIdentifier;
 
+        NSLog(@"ReUseID: %@", reuseId);
+
         if([self.revealController.frontViewController isKindOfClass:[DefaultNavigationController class]]){
             DefaultNavigationController *frontViewController = (DefaultNavigationController *)self.revealController.frontViewController;
 
                 //set Dashboard currentlyActive the first time
             if([[frontViewController viewControllers] count] == 1 && [reuseId isEqualToString:@"dashboard"]){
-                if([[[frontViewController viewControllers] lastObject] isKindOfClass:[DMViewController class]]){
+                if([[[frontViewController viewControllers] lastObject] isKindOfClass:[HomeViewController class]]){
                     cell.currentlyActive = YES;
                     self.menuViewControllers[@"dashboard"] = [[frontViewController viewControllers] lastObject];
                 }
@@ -130,14 +140,16 @@
                         aViewController.title = @"Metro Station Details";
                         [self setCellActive:cell];
 
-                    }else if([reuseId isEqualToString:@"routes"]){
+                    }else if([reuseId isEqualToString:@"ride-remind"] || [reuseId isEqualToString:@"routes"]){
 
-                        if([self.menuViewControllers[@"routes"] isKindOfClass:[UIViewController class]]){
-                            aViewController = self.menuViewControllers[@"routes"];
+                        if([self.menuViewControllers[reuseId] isKindOfClass:[UIViewController class]]){
+                            aViewController = self.menuViewControllers[reuseId];
                         }else{
                             aViewController = [[UIStoryboard storyboardWithName:@"iPhone" bundle:nil] instantiateViewControllerWithIdentifier:@"JourneyTableViewController"];
                         }
-                        aViewController.title = @"Journey Routes";
+                        if([reuseId isEqualToString:@"ride-remind"]){
+                            aViewController.title = @"Ride & Remind";
+                        }
 
                         NSManagedObjectContext *context = frontViewController.managedObjectContext;
 
@@ -177,12 +189,6 @@
                             aViewController = [[UIStoryboard storyboardWithName:@"iPhone" bundle:nil] instantiateViewControllerWithIdentifier:@"SettingsTableViewController"];
                         }
 
-                        [self setCellActive:cell];
-
-                    }else if ([reuseId isEqualToString:@"rate"]){
-#ifdef DM_DEBUG
-                        NSLog(@"Rating");
-#endif
                         [self setCellActive:cell];
 
                     }else if ([reuseId isEqualToString:@"about"]){
@@ -246,9 +252,60 @@
                 [alert show];
             }
 
+        }else if ([reuseId isEqualToString:@"rate"]){
+                //Rating
+            NSLog(@"Rating now");
+            SKStoreProductViewController *storeProductViewController = [[SKStoreProductViewController alloc] init];
+            storeProductViewController.delegate = self;
+
+            LoadingOverlay *loadingOverlay = [[LoadingOverlay alloc] initWithCustomFrame:[UIScreen mainScreen].bounds];
+
+            [self.revealController.view addSubview:loadingOverlay];
+            [self.revealController.view bringSubviewToFront:loadingOverlay];
+
+            [storeProductViewController loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier:@"779743393"}
+                                                  completionBlock:^(BOOL result, NSError *error){
+                                                      [loadingOverlay hide];
+                                                      if(error){
+                                                          UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                                                                   message:[error localizedDescription]
+                                                                                                                  delegate:self
+                                                                                                         cancelButtonTitle:@"Okay"
+                                                                                                         otherButtonTitles:nil, nil];
+                                                          [errorAlertView show];
+#ifdef DM_DEBUG
+                                                          NSLog(@"App Store Error: %@", error);
+#endif
+
+                                                      }else{
+                                                          [self presentViewController:storeProductViewController animated:YES completion:^{
+                                                              [DMHelper trackScreenWithName:@"Rating"];
+                                                          }];
+                                                      }
+
+                                                  }];
+            
+            [self setCellActive:cell];
+        }else if([reuseId isEqualToString:@"share"]){
+
+            UIImage *firstScreenShot = [UIImage imageNamed:@"walkthrough-1.png"];
+
+            NSString *descriptionText = [@"I have been using this beautiful DubaiMetro app. Grab it over here: "
+                                         stringByAppendingString:APPSTORE_SHORT_URL];
+
+            NSArray *activityItems = @[firstScreenShot, descriptionText];
+
+            UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems
+                                                                                                 applicationActivities:nil];
+
+            [self presentViewController:activityViewController animated:YES completion:^{
+
+            }];
+
+
         }else{
-            [self.revealController showViewController:self.revealController.frontViewController];
-        }
+                [self.revealController showViewController:self.revealController.frontViewController];
+            }
 
     } //end table Cell check
 }
@@ -277,6 +334,11 @@
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

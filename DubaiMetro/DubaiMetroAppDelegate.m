@@ -11,7 +11,6 @@
 
 /** Google Analytics configuration constants **/
 static NSString *const kGaPropertyId = @"UA-25341260-3"; // Placeholder property ID.
-static BOOL const kGaDryRun = YES; //Set to YES for NO Tracking, set to NO to Tracking
 static int const kGaDispatchPeriod = 30;
 static BOOL const kGaTrackUncaughtExceptions = YES;
 
@@ -58,6 +57,11 @@ static BOOL const kGaTrackUncaughtExceptions = YES;
 
 - (void)initializeGoogleAnalytics
 {
+    BOOL kGaDryRun = NO;
+
+#ifdef DM_DEBUG
+    kGaDryRun = YES; //Set to YES for NO Tracking, set to NO for Tracking
+#endif
 
     [[GAI sharedInstance] setDispatchInterval:kGaDispatchPeriod];
     [[GAI sharedInstance] setDryRun:kGaDryRun];
