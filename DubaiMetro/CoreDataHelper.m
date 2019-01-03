@@ -41,10 +41,13 @@
 
     NSURL *documentsDirectoryURL = [[fileManager URLsForDirectory:NSDocumentDirectory
                                                         inDomains:NSUserDomainMask] lastObject];
+
+        NSError *error = nil;
+
         //Delete old version
     if([fileManager fileExistsAtPath:[[documentsDirectoryURL URLByAppendingPathComponent:@"/DubaiMetro"] path]]){
             //we don't care about the error
-        [fileManager removeItemAtURL:[documentsDirectoryURL URLByAppendingPathComponent:@"/DubaiMetro"] error:nil];
+        [fileManager removeItemAtURL:[documentsDirectoryURL URLByAppendingPathComponent:@"/DubaiMetro"] error:&error];
     }
 
     NSString *pathComponent = [@"/CoreData/MetroStations/" stringByAppendingString:[[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey]];
@@ -60,10 +63,13 @@
         }
     }
 
-    NSError *error = nil;
+    if(error) NSLog(@"Error: %@", error);
+
+
 
     [fileManager createDirectoryAtPath:[storageURL path] withIntermediateDirectories:YES attributes:nil error:&error];
 
+        if(error) NSLog(@"Error: %@", error);
     if(!error)
         return storageURL;
 
